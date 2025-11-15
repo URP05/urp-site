@@ -1,16 +1,30 @@
-<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join URP</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/style.css" rel="stylesheet"></head><body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join URP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; background:#f5f7fa; color:#222; }
+    .hero { background:#0a3d62; color:white; padding:30px 20px; text-align:center; }
+    .container-card { max-width:1100px; margin:auto; padding:30px; }
+    .card-ct { border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.06); padding:20px; background:white; }
+    .btn-urp { background:#f39c12; color:white; border:none; padding:10px 18px; border-radius:6px; }
+    .logo { height:36px; }
+    .footer { background:#2d3436; color:white; padding:18px 0; text-align:center; margin-top:30px; }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:#3b6df3;">
   <div class="container">
-    <a class="navbar-brand" href="index.html"><img src="assets/urp-logo-A.svg" class="logo" alt="URP Logo"/></a>
+    <a class="navbar-brand" href="index.html">URP</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="vision.html">Vision</a></li>
-        <li class="nav-item"><a class="nav-link" href="join.html">Join</a></li>
+        <li class="nav-item"><a class="nav-link active" href="join.html">Join</a></li>
         <li class="nav-item"><a class="nav-link" href="candidates.html">Candidates</a></li>
         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
@@ -18,38 +32,31 @@
   </div>
 </nav>
 
-<section class="container container-card">
-  <h2>Join URP</h2>
-  <p>Fill the membership form or scan QR to join.</p>
-  <div class="row">
-    <div class="col-md-6 card-ct">
-      <form id="memForm">
-        <div class="mb-3"><label class="form-label">Name</label><input class="form-control" id="name"></div>
-        <div class="mb-3"><label class="form-label">Mobile</label><input class="form-control" id="mobile"></div>
-        <div class="mb-3"><label class="form-label">EPIC (Voter ID)</label><input class="form-control" id="epic"></div>
-        <div class="mb-3"><label class="form-label">District</label><input class="form-control" id="district"></div>
-        <button class="btn btn-urp" type="button" onclick="save()">Submit</button>
-      </form>
-      <p class="small mt-2">Note: This demo saves data in your browser only. For production we can connect to Firebase.</p>
-    </div>
-    <div class="col-md-6 text-center"><img src="assets/images/poster_1.svg" style="max-width:100%"><p>Scan QR on poster to join instantly.</p></div>
+<header class="hero">
+  <div class="container">
+    <h1>Join Uttarakhand Reform Party</h1>
+    <p class="lead">इस फॉर्म को भरकर URP से जुड़ें — आपकी जानकारी सुरक्षित रहेगी।</p>
   </div>
+</header>
+
+<section class="container container-card">
+  <h2>URP Membership Form</h2>
+  <p>नीचे दिए गए फॉर्म को भरें — आपकी responses सीधे हमारी central Google Sheet में जाएँगी।</p>
+
+  <!-- Embedded Google Form -->
+  <div class="card-ct">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?usp=dialog?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+
+  <p class="mt-3 small">Note: This embed uses Google Forms. If you face any issue, open the form <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?usp=dialog" target="_blank" rel="noopener">in a new tab</a>.</p>
 </section>
 
 <footer class="footer">
-  <div class="container">
-    <p>© 2025 Uttarakhand Reform Party — All Rights Reserved.</p>
+  <div class="container text-center">
+    © 2025 Uttarakhand Reform Party — All Rights Reserved.
   </div>
 </footer>
 
-<script>
-function save(){
-  var name=document.getElementById('name').value; var mobile=document.getElementById('mobile').value; var epic=document.getElementById('epic').value; var district=document.getElementById('district').value;
-  var mem=JSON.parse(localStorage.getItem('urp_members')||'[]');
-  mem.push({name:name,mobile:mobile,epic:epic,district:district});
-  localStorage.setItem('urp_members',JSON.stringify(mem));
-  alert('Saved locally. Use Admin to export CSV.');
-}
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body></html>
+</body>
+</html>
