@@ -1,0 +1,55 @@
+<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join URP</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/style.css" rel="stylesheet"></head><body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="assets/urp-logo-A.svg" class="logo" alt="URP Logo"/></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="vision.html">Vision</a></li>
+        <li class="nav-item"><a class="nav-link" href="join.html">Join</a></li>
+        <li class="nav-item"><a class="nav-link" href="candidates.html">Candidates</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="container container-card">
+  <h2>Join URP</h2>
+  <p>Fill the membership form or scan QR to join.</p>
+  <div class="row">
+    <div class="col-md-6 card-ct">
+      <form id="memForm">
+        <div class="mb-3"><label class="form-label">Name</label><input class="form-control" id="name"></div>
+        <div class="mb-3"><label class="form-label">Mobile</label><input class="form-control" id="mobile"></div>
+        <div class="mb-3"><label class="form-label">EPIC (Voter ID)</label><input class="form-control" id="epic"></div>
+        <div class="mb-3"><label class="form-label">District</label><input class="form-control" id="district"></div>
+        <button class="btn btn-urp" type="button" onclick="save()">Submit</button>
+      </form>
+      <p class="small mt-2">Note: This demo saves data in your browser only. For production we can connect to Firebase.</p>
+    </div>
+    <div class="col-md-6 text-center"><img src="assets/images/poster_1.svg" style="max-width:100%"><p>Scan QR on poster to join instantly.</p></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 Uttarakhand Reform Party — All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+function save(){
+  var name=document.getElementById('name').value; var mobile=document.getElementById('mobile').value; var epic=document.getElementById('epic').value; var district=document.getElementById('district').value;
+  var mem=JSON.parse(localStorage.getItem('urp_members')||'[]');
+  mem.push({name:name,mobile:mobile,epic:epic,district:district});
+  localStorage.setItem('urp_members',JSON.stringify(mem));
+  alert('Saved locally. Use Admin to export CSV.');
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body></html>
