@@ -49,17 +49,14 @@
       align-items:center;
       gap:10px;
     }
-    .logo-mark{
-      width:36px;
-      height:36px;
+    /* OLD .logo-mark हटाकर नया image logo class */
+    .logo-img{
+      width:44px;
+      height:44px;
       border-radius:50%;
-      background:#fff;
-      color:var(--primary);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      font-size:14px;
+      object-fit:cover;
+      background:#ffffff;
+      box-shadow:0 0 0 2px rgba(255,255,255,0.7);
     }
     .brand-title{
       font-weight:800;
@@ -334,7 +331,8 @@
   <header class="header">
     <div class="container nav">
       <div class="logo-wrap">
-        <div class="logo-mark">URP</div>
+        <!-- यहीं पर आपका logo use हो रहा है -->
+        <img src="logo%20urp.png" alt="URP logo" class="logo-img">
         <div class="brand-title">Uttarakhand Reform Party</div>
       </div>
       <nav class="navlinks">
