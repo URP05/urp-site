@@ -1,3 +1,342 @@
-<!doctype html><html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Candidates</title><link rel="stylesheet" href="assets/style.css"></head><body>
-<header class="header"><div class="container nav"><div class="logo"><img src="assets/logo.svg" alt="URP logo"/><div style="color:white">Uttarakhand Reform Party</div></div></div></header>
-<main class="section container"><h2>Candidates</h2><p class="small">Candidate info and application. जिसका लक्ष्य उत्तराखण्ड में पारदर्शिता और स्थानीय विकास लाना है।</p></main><footer class="footer"><div class="container">© 2025 URP</div></footer></body></html>
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <title>Candidate Selection — Uttarakhand Reform Party</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="URP candidate selection policy, eligibility and process for Uttarakhand elections.">
+
+  <style>
+    :root{
+      --primary:#0a3d62;
+      --primary-soft:#174c91;
+      --accent:#f39c12;
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111827;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .header{
+      background:linear-gradient(90deg,var(--primary),#3b6df3);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 4px 14px rgba(15,35,75,0.35);
+    }
+    .container{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-mark{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:#fff;
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:14px;
+    }
+    .brand-title{
+      font-weight:800;
+      letter-spacing:.03em;
+      font-size:15px;
+    }
+    .navlinks{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+      font-weight:500;
+    }
+    .navlinks a{
+      color:rgba(255,255,255,0.94);
+      padding:4px 0;
+    }
+    .navlinks a.active{
+      border-bottom:2px solid var(--accent);
+    }
+
+    .hero{
+      padding:46px 0 26px;
+      background:
+        radial-gradient(circle at top left,#e1ecff,transparent 55%),
+        radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
+    }
+    .hero-title{
+      font-size:30px;
+      line-height:1.3;
+      color:#0b2b4a;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .hero-sub{
+      font-size:15px;
+      color:#1f2933;
+      max-width:720px;
+    }
+    .hero-kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    .section{
+      padding:30px 0;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:20px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:16px 16px 18px;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+    .card h3, .card h4{
+      font-size:17px;
+      margin-bottom:6px;
+      color:#0b2b4a;
+    }
+    .card p{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline{
+      list-style:none;
+      padding-left:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline li{
+      margin-bottom:8px;
+      padding-left:18px;
+      position:relative;
+    }
+    .timeline li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--accent);
+      font-size:18px;
+      line-height:1;
+    }
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:6px;
+    }
+    .tag{
+      font-size:11px;
+      border-radius:999px;
+      padding:3px 8px;
+      background:#eef2ff;
+      color:#3730a3;
+    }
+    .small{font-size:12px;color:var(--muted);}
+
+    .footer{
+      background:#0b2b4a;
+      color:#fff;
+      padding:22px 0 18px;
+      margin-top:24px;
+      font-size:12px;
+    }
+    .footer-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:space-between;
+    }
+    .footer a{color:#e5e7eb}
+
+    @media (max-width:900px){
+      .navlinks{display:none;}
+      .two-col{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo-wrap">
+        <div class="logo-mark">URP</div>
+        <div class="brand-title">Uttarakhand Reform Party</div>
+      </div>
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="vision.html">Vision</a>
+        <a href="join.html">Join</a>
+        <a href="candidates.html" class="active">Candidates</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-kicker">CANDIDATES • TICKET POLICY</div>
+        <h1 class="hero-title">साफ़ criteria, data-based selection — यही URP की candidate नीति</h1>
+        <p class="hero-sub">
+          URP में ticket “किसी के कहने” से नहीं, बल्कि स्पष्ट eligibility, ground काम और public feedback के आधार पर दिया जाएगा।
+          हमारा लक्ष्य है कि हर seat पर जनता को <strong>ईमानदार, सक्षम और connected उम्मीदवार</strong> मिले।
+        </p>
+      </div>
+    </section>
+
+    <!-- ELIGIBILITY + NEGATIVE LIST -->
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <div class="card">
+            <h3>Eligibility (योग्यता)</h3>
+            <ul class="timeline">
+              <li>उम्मीदवार 25+ वर्ष का हो और संबंधित सीट में मजबूत connect हो (voter / निवासी / लंबे समय से काम)।</li>
+              <li>साफ़ public image — किसी serious corruption या हिंसक crime में दोषी न हो।</li>
+              <li>कम से कम 2–3 साल का सामाजिक काम / public service experience (NGO, army, education, health, youth work आदि)।</li>
+              <li>URP के core values और manifesto पर लिखित सहमति।</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>Negative List (जो स्वीकार्य नहीं होगा)</h3>
+            <ul class="timeline">
+              <li>गंभीर आपराधिक मामलों में convicted व्यक्ति (murder, rape, major corruption)।</li>
+              <li>दंगे/सांप्रदायिक हिंसा को बढ़ावा देने का documented इतिहास।</li>
+              <li>बार-बार party बदलने वाले “professionals of politics” जिनका कोई ground base नहीं।</li>
+            </ul>
+            <div class="tag-row">
+              <div class="tag">Clean image</div>
+              <div class="tag">Zero-tolerance crime</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTION PROCESS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Selection Process (कैसे चुने जाएँगे उम्मीदवार?)</h2>
+          <p>Seat-wise transparent process ताकि volunteers, workers और आम जनता देख सके कि ticket fair तरीके से दिया गया है।</p>
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <h4>Step 1 — Expression of Interest</h4>
+            <p class="small">
+              इच्छुक उम्मीदवार पहले <strong>URP सदस्य</strong> बनते हैं, फिर अलग से “Candidate Interest Form” भरते हैं 
+              (विधानसभा, background, काम का अनुभव, vision आदि)।
+            </p>
+            <ul class="timeline">
+              <li>Local टीम candidate से initial discussion करती है।</li>
+              <li>Basic background verification (social media, ground feedback)।</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Step 2 — Ground Feedback & Survey</h4>
+            <p class="small">
+              हर संभावित उम्मीदवार पर booth / ward स्तर पर छोटा survey — “क्या आप इन्हें अपने क्षेत्र का प्रतिनिधि मानते हैं?”
+            </p>
+            <ul class="timeline">
+              <li>Local volunteers और digital survey दोनों का उपयोग।</li>
+              <li>Feedback summary लिखित रूप में candidate के साथ share होगी।</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Step 3 — Panel Evaluation</h4>
+            <p class="small">
+              District व state level committee candidate का evaluation matrix पर score तय करती है:
+            </p>
+            <ul class="timeline">
+              <li>Public image & clean record</li>
+              <li>Ground work & volunteer management</li>
+              <li>Subject knowledge (local issues, policy)</li>
+              <li>Winning potential (data + survey)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Step 4 — Final Announcement</h4>
+            <p class="small">
+              Ticket final होते ही public website पर candidate details, background और संपर्क जानकारी open रखी जाएगी ताकि transparency बनी रहे।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <h3>क्या आप भविष्य में URP से चुनाव लड़ना चाहते हैं?</h3>
+          <p class="small" style="margin-top:4px;">
+            अभी के लिए पहला step simple है — <strong>URP सदस्य बनें</strong>, ground काम शुरू करें और अपने क्षेत्र के लोगों के साथ 
+            लगातार contact में रहें। जब आधिकारिक रूप से candidate application खोला जाएगा, तो registered members को 
+            email / WhatsApp के ज़रिए सूचना दी जाएगी।
+          </p>
+          <p class="small" style="margin-top:8px;">
+            👉 <a href="join.html" style="color:var(--primary-soft);font-weight:600;">Join पेज</a> पर जाएँ, membership form भरें 
+            और district team के संपर्क में रहें।
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div>© 2025 Uttarakhand Reform Party</div>
+        <div class="small">Reform-focused political platform for Uttarakhand.</div>
+      </div>
+      <div class="small">
+        <div>Contact: contact@uttarakhandreform.org</div>
+        <div>Phone: +91 98765 43210</div>
+      </div>
+      <div class="small">
+        <div><a href="join.html">Volunteer / Join</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
