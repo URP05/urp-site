@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="URP's vision for transparent governance, anti-migration, better health, education and jobs in Uttarakhand.">
 
-  <!-- SAME INLINE STYLE (match with Home & About) -->
   <style>
     :root{
       --primary:#0a3d62;
@@ -48,17 +47,13 @@
       align-items:center;
       gap:10px;
     }
-    .logo-mark{
-      width:36px;
-      height:36px;
+    .logo-img{
+      width:44px;
+      height:44px;
       border-radius:50%;
+      object-fit:cover;
       background:#fff;
-      color:var(--primary);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      font-size:14px;
+      box-shadow:0 0 0 2px rgba(255,255,255,0.7);
     }
     .brand-title{
       font-weight:800;
@@ -105,79 +100,8 @@
       margin-bottom:6px;
     }
 
-    .section{
-      padding:30px 0;
-    }
-    .section-header{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:16px;
-    }
-    .section-header h2{
-      font-size:22px;
-      color:#111827;
-    }
-    .section-header p{
-      font-size:13px;
-      color:var(--muted);
-      max-width:420px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:14px;
-    }
-    .card{
-      background:var(--card);
-      border-radius:14px;
-      padding:16px 16px 18px;
-      box-shadow:0 10px 26px rgba(15,23,42,0.06);
-    }
-    .card h3, .card h4{
-      font-size:17px;
-      margin-bottom:6px;
-      color:#0b2b4a;
-    }
-    .card p{
-      font-size:13px;
-      color:var(--muted);
-    }
-    .timeline{
-      list-style:none;
-      padding-left:0;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .timeline li{
-      margin-bottom:8px;
-      padding-left:18px;
-      position:relative;
-    }
-    .timeline li::before{
-      content:"•";
-      position:absolute;
-      left:0;
-      top:0;
-      color:var(--accent);
-      font-size:18px;
-      line-height:1;
-    }
-    .tag-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      margin-top:6px;
-    }
-    .tag{
-      font-size:11px;
-      border-radius:999px;
-      padding:3px 8px;
-      background:#eef2ff;
-      color:#3730a3;
-    }
-    .small{font-size:12px;color:var(--muted);}
+    .section{padding:30px 0;}
+    .container h2{font-size:22px;}
 
     .footer{
       background:#0b2b4a;
@@ -192,7 +116,6 @@
       gap:14px;
       justify-content:space-between;
     }
-    .footer a{color:#e5e7eb}
 
     @media (max-width:800px){
       .navlinks{display:none;}
@@ -201,187 +124,39 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav">
-      <div class="logo-wrap">
-        <div class="logo-mark">URP</div>
-        <div class="brand-title">Uttarakhand Reform Party</div>
-      </div>
-      <nav class="navlinks">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="vision.html" class="active">Vision</a>
-        <a href="join.html">Join</a>
-        <a href="candidates.html">Candidates</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="header">
+  <div class="container nav">
+    <div class="logo-wrap">
+      <img src="logo%20urp.png" alt="URP Logo" class="logo-img">
+      <div class="brand-title">Uttarakhand Reform Party</div>
     </div>
-  </header>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="vision.html" class="active">Vision</a>
+      <a href="join.html">Join</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-kicker">VISION • SHORT MANIFESTO</div>
-        <h1 class="hero-title">URP का विज़न: सुरक्षित, सक्षम और सम्मानित उत्तराखंड</h1>
-        <p class="hero-sub">
-          हमारा लक्ष्य केवल सरकार बदलना नहीं, बल्कि Governance की quality बदलना है।  
-          नारा simple है — <strong>“काम दिखे, data बोले, जनता decide करे।”</strong>
-        </p>
-      </div>
-    </section>
+<section class="hero">
+  <div class="container">
+    <div class="hero-kicker">VISION • URP</div>
+    <h1 class="hero-title">URP का विज़न: सुरक्षित, सक्षम और आत्मनिर्भर उत्तराखंड</h1>
+    <p class="hero-sub">
+      हमारा लक्ष्य सिर्फ़ सत्ता नहीं बल्कि सिस्टम बदलना है — पारदर्शी शासन, पहाड़-केंद्रित विकास और जन-भागीदारी आधारित नीति।
+    </p>
+  </div>
+</section>
 
-    <!-- PILLAR CARDS -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>6–Pillar Vision (Short Document)</h2>
-          <p>पूरा detailed manifesto seat-wise survey के बाद आएगा। यह उसका संक्षिप्त framework है जो हर seat पर लागू होगा।</p>
-        </div>
-
-        <div class="grid">
-          <!-- Governance -->
-          <div class="card">
-            <h3>1. Governance & Transparency</h3>
-            <p>“File से बाहर, public dashboard पर” — हर काम, हर खर्च, हर deadline जनता के सामने।</p>
-            <ul class="timeline">
-              <li>District-wise public portal: project name, लागत, contractor, status, फोटो, geo-tag।</li>
-              <li>Quarterly “जनता दरबार + report card” — केवल भाषण नहीं, data-based जवाब।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">Live dashboards</div>
-              <div class="tag">Social audit</div>
-            </div>
-          </div>
-
-          <!-- Employment -->
-          <div class="card">
-            <h3>2. रोजगार व युवा सशक्तिकरण</h3>
-            <p>“Earn from your district” — job पाने के लिए state से बाहर भागना compulsion न रहे।</p>
-            <ul class="timeline">
-              <li>हर जिले में multi-skill hub — IT, tourism, logistics, agro-processing, digital services।</li>
-              <li>Local job mapping portal — कौन सी company कहाँ hiring कर रही है, clear visibility।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">Skill hubs</div>
-              <div class="tag">District job portal</div>
-            </div>
-          </div>
-
-          <!-- Women -->
-          <div class="card">
-            <h3>3. महिला सुरक्षा व अवसर</h3>
-            <p>सड़क, बाजार, स्कूल, workplace — हर जगह women-friendly infrastructure और behaviour change दोनों।</p>
-            <ul class="timeline">
-              <li>Key शहरी इलाकों में well-lit streets, CCTV, women help-desk व dedicated rapid response teams।</li>
-              <li>महिला SHG को tourism, food, handicraft, services में stable income chains से जोड़ना।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">Safe cities</div>
-              <div class="tag">Women SHG economy</div>
-            </div>
-          </div>
-
-          <!-- Health & Education -->
-          <div class="card">
-            <h3>4. Health & Education Reset</h3>
-            <p>Hospital और school political photo-op के लिए नहीं, quality outcomes के लिए measure होंगे।</p>
-            <ul class="timeline">
-              <li>District hospitals में 24×7 emergency + specialist rosters; tele-medicine से hill blocks cover।</li>
-              <li>Hill schools में teacher-posting audit; digital classrooms और local-language support।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">Health audit</div>
-              <div class="tag">Teacher mapping</div>
-            </div>
-          </div>
-
-          <!-- Migration -->
-          <div class="card">
-            <h3>5. पलायन रोकना व गाँव पुनर्जीवन</h3>
-            <p>खाली गाँव सिर्फ़ nostalgia का विषय न रहें — उन्हें नए economic मॉडल से revive किया जाए।</p>
-            <ul class="timeline">
-              <li>“Adopt-a-village” मॉडल — youth, ex-servicemen और diaspora को village revival से जोड़ना।</li>
-              <li>Agro-tourism, homestay, off-beat campuses और mountain campuses जैसी योजनाएँ।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">Anti-migration</div>
-              <div class="tag">Village revival</div>
-            </div>
-          </div>
-
-          <!-- Environment & Disaster -->
-          <div class="card">
-            <h3>6. Environment & Disaster Preparedness</h3>
-            <p>उत्तराखंड का विकास नदी, पहाड़ और जंगल से जुड़ा है — इनको ignore करके कोई policy sustainable नहीं।</p>
-            <ul class="timeline">
-              <li>Spring & river rejuvenation, landslide-prone zones की mapping और preventive works।</li>
-              <li>हर block में disaster-ready volunteer network और नियमित mock drills।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">Climate sensitive</div>
-              <div class="tag">Disaster ready</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW THIS VISION WILL BE BUILT -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Vision से Policy तक — Process</h2>
-          <p>यह vision ऊपर से impose नहीं होगा; हर seat पर लोगों से बात करके इसे district-wise refine किया जाएगा।</p>
-        </div>
-        <div class="grid">
-          <div class="card">
-            <h4>1. Seat-wise Surveys</h4>
-            <p class="small">
-              हर विधानसभा में structured survey — youth, महिलाएँ, किसान, small businesses, employees — सबकी प्राथमिकताएँ अलग से रिकॉर्ड होंगी।
-            </p>
-          </div>
-          <div class="card">
-            <h4>2. Policy Labs</h4>
-            <p class="small">
-              Volunteers + domain experts की छोटी-छोटी “policy labs” जहाँ health, education, tourism, environment पर workable drafts बनें।
-            </p>
-          </div>
-          <div class="card">
-            <h4>3. Public Feedback Draft</h4>
-            <p class="small">
-              Manifesto को final मानने से पहले public domain में रखकर feedback लिया जाएगा — online और ground दोनों पर।
-            </p>
-          </div>
-          <div class="card">
-            <h4>4. Measurable 100-day & 5-year goals</h4>
-            <p class="small">
-              हर sector के लिए 100-day, 2-year और 5-year targets — जिनका public yearly report card बने।
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <div>© 2025 Uttarakhand Reform Party</div>
-        <div class="small">Reform-focused political platform for Uttarakhand.</div>
-      </div>
-      <div class="small">
-        <div>Contact: contact@uttarakhandreform.org</div>
-        <div>Phone: +91 98765 43210</div>
-      </div>
-      <div class="small">
-        <div><a href="join.html">Volunteer / Join</a></div>
-        <div><a href="candidates.html">Apply as Candidate</a></div>
-      </div>
-    </div>
-  </footer>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>© 2025 Uttarakhand Reform Party</div>
+    <div>contact@uttarakhandreform.org</div>
+  </div>
+</footer>
 
 </body>
 </html>
