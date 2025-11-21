@@ -1,21 +1,294 @@
 <!doctype html>
 <html lang="hi">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Join URP</title>
-<link rel="stylesheet" href="assets/style.css"></head><body>
-<header class="header"><div class="container nav"><div class="logo"><img src="assets/logo.svg" alt="URP logo"/><div style="color:white">Uttarakhand Reform Party</div></div><nav class="navlinks"><a href="about.html">About</a><a href="vision.html">Vision</a><a href="join.html">Join</a><a href="candidates.html">Candidates</a><a href="contact.html">Contact</a></nav></div></header>
-<main class="section container">
-  <h2>Join URP — Membership</h2>
-  <div style="display:flex;gap:18px;flex-wrap:wrap">
-    <div style="flex:1" class="card">
-      <h3>Why join?</h3>
-      <p class="small">Be part of a reform movement focused on the mountains — volunteer, lead or donate.</p>
-      <ul class="small"><li>Local action groups</li><li>Skill & livelihood programs</li><li>Women safety initiatives</li></ul>
+<head>
+  <meta charset="utf-8">
+  <title>Join URP — Uttarakhand Reform Party</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Join Uttarakhand Reform Party (URP) as a volunteer, member or local organiser.">
+
+  <style>
+    :root{
+      --primary:#0a3d62;
+      --primary-soft:#174c91;
+      --accent:#f39c12;
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111827;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .header{
+      background:linear-gradient(90deg,var(--primary),#3b6df3);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 4px 14px rgba(15,35,75,0.35);
+    }
+    .container{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-mark{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      background:#fff;
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:14px;
+    }
+    .brand-title{
+      font-weight:800;
+      letter-spacing:.03em;
+      font-size:15px;
+    }
+    .navlinks{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+      font-weight:500;
+    }
+    .navlinks a{
+      color:rgba(255,255,255,0.94);
+      padding:4px 0;
+    }
+    .navlinks a.active{
+      border-bottom:2px solid var(--accent);
+    }
+
+    .hero{
+      padding:46px 0 24px;
+      background:
+        radial-gradient(circle at top left,#e1ecff,transparent 55%),
+        radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
+    }
+    .hero-title{
+      font-size:30px;
+      line-height:1.3;
+      color:#0b2b4a;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .hero-sub{
+      font-size:15px;
+      color:#1f2933;
+      max-width:720px;
+    }
+    .hero-kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    .section{
+      padding:30px 0;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+      gap:20px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:16px 16px 18px;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+    .card h3, .card h4{
+      font-size:17px;
+      margin-bottom:6px;
+      color:#0b2b4a;
+    }
+    .card p{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline{
+      list-style:none;
+      padding-left:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline li{
+      margin-bottom:8px;
+      padding-left:18px;
+      position:relative;
+    }
+    .timeline li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--accent);
+      font-size:18px;
+      line-height:1;
+    }
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:8px;
+    }
+    .badge{
+      font-size:11px;
+      border-radius:999px;
+      padding:4px 10px;
+      background:#eef2ff;
+      color:#3730a3;
+    }
+    .small{font-size:12px;color:var(--muted);}
+
+    iframe{
+      width:100%;
+      border:none;
+      border-radius:14px;
+      background:#fff;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+
+    .footer{
+      background:#0b2b4a;
+      color:#fff;
+      padding:22px 0 18px;
+      margin-top:24px;
+      font-size:12px;
+    }
+    .footer-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:space-between;
+    }
+    .footer a{color:#e5e7eb}
+
+    @media (max-width:900px){
+      .navlinks{display:none;}
+      .two-col{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo-wrap">
+        <div class="logo-mark">URP</div>
+        <div class="brand-title">Uttarakhand Reform Party</div>
+      </div>
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="vision.html">Vision</a>
+        <a href="join.html" class="active">Join</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-    <div style="width:560px" class="card">
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?embedded=true" style="width:100%;height:760px;border:0"></iframe>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-kicker">JOIN • MEMBERSHIP & VOLUNTEERS</div>
+        <h1 class="hero-title">URP से जुड़ें — बदलाव की राजनीति में अपना योगदान दें</h1>
+        <p class="hero-sub">
+          URP में membership simple, digital और transparent है। कोई hidden form या closed group नहीं —
+          हर जागरूक नागरिक, भूतपूर्व सैनिक, youth, महिला और professional का स्वागत है।
+        </p>
+      </div>
+    </section>
+
+    <!-- JOIN PROCESS + FORM -->
+    <section class="section">
+      <div class="container two-col">
+        <!-- LEFT: STEPS -->
+        <div>
+          <div class="card">
+            <h3>सदस्यता लेने के 4 आसान स्टेप</h3>
+            <ul class="timeline">
+              <li><strong>Form भरें:</strong> नीचे दिया गया Google Form पूरा भरें — नाम, mobile, EPIC, जिला/विधानसभा आदि।</li>
+              <li><strong>Verification:</strong> District / Assembly coordinator 7–10 दिन के भीतर आपसे call / WhatsApp पर संपर्क करेगा।</li>
+              <li><strong>Role तय करें:</strong> आप volunteer, booth-level, ward-level या digital टीम में कैसे contribute करना चाहते हैं, यह तय होगा।</li>
+              <li><strong>Team में शामिल:</strong> आपको official WhatsApp / email चैनल से जोड़ा जाएगा और local meetings / training की जानकारी दी जाएगी।</li>
+            </ul>
+            <div class="badge-row">
+              <div class="badge">No joining fee अभी</div>
+              <div class="badge">Digital record & ID</div>
+              <div class="badge">Seat-wise volunteer network</div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px;">
+            <h4>कौन-कौन जुड़ सकता है?</h4>
+            <ul class="timeline">
+              <li>18+ वर्ष, उत्तराखंड से संबंध (निवासी / voter / origin)।</li>
+              <li>किसी भी धर्म, जाति, क्षेत्र से — कोई discrimination नहीं।</li>
+              <li>किसी गंभीर आपराधिक मामले में दोषी न हों।</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT: GOOGLE FORM -->
+        <div>
+          <p class="small" style="margin-bottom:8px;">
+            नीचे membership form सीधे Google Forms से जुड़ा है — आपके data की entry real-time Google Sheet में जाएगी।
+          </p>
+          <iframe 
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?embedded=true"
+            height="950"
+            loading="lazy">
+            Loading…
+          </iframe>
+          <p class="small" style="margin-top:6px;">
+            अगर form दिखाई न दे, तो <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?usp=sf_link" target="_blank" style="color:var(--primary-soft);font-weight:600;">इस सीधा लिंक</a> पर क्लिक करके form भर सकते हैं।
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div>© 2025 Uttarakhand Reform Party</div>
+        <div class="small">Reform-focused political platform for Uttarakhand.</div>
+      </div>
+      <div class="small">
+        <div>Contact: contact@uttarakhandreform.org</div>
+        <div>Phone: +91 98765 43210</div>
+      </div>
+      <div class="small">
+        <div><a href="candidates.html">Apply as Candidate</a></div>
+      </div>
     </div>
-  </div>
-  <p class="small">If the form doesn't load, <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform" target="_blank">open it in a new tab</a>.</p>
-</main>
-<footer class="footer"><div class="container"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap"><div>© 2025 Uttarakhand Reform Party</div><div class="small">Contact: contact@uttarakhandreform.org</div></div></div></footer>
-</body></html>
+  </footer>
+
+</body>
+</html>
