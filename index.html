@@ -5,13 +5,12 @@
   <title>Uttarakhand Reform Party (URP) — Official Website</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="URP is a mountain-first reform movement focused on transparent governance, youth empowerment, women safety and rural livelihoods in Uttarakhand.">
-  <!-- Optional: existing CSS if present -->
-  <link rel="stylesheet" href="assets/style.css">
+
+  <!-- PURE INLINE CSS: कोई external file की ज़रूरत नहीं -->
   <style>
-    /* Basic modern styling – works even if assets/style.css is simple */
     :root{
       --primary:#0a3d62;
-      --primary-soft:#0f5090;
+      --primary-soft:#174c91;
       --accent:#f39c12;
       --bg:#f5f7fa;
       --card:#ffffff;
@@ -24,13 +23,15 @@
       color:#111827;
     }
     a{text-decoration:none;color:inherit}
+
+    /* HEADER */
     .header{
       background:linear-gradient(90deg,var(--primary),#3b6df3);
       color:#fff;
       position:sticky;
       top:0;
-      z-index:20;
-      box-shadow:0 8px 20px rgba(15,35,75,0.25);
+      z-index:10;
+      box-shadow:0 4px 14px rgba(15,35,75,0.35);
     }
     .container{
       max-width:1120px;
@@ -41,18 +42,24 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:14px 0;
+      padding:12px 0;
     }
     .logo-wrap{
       display:flex;
       align-items:center;
       gap:10px;
     }
-    .logo-wrap img{
-      height:42px;
-      border-radius:999px;
+    .logo-mark{
+      width:36px;
+      height:36px;
+      border-radius:50%;
       background:#fff;
-      padding:4px;
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:14px;
     }
     .brand-title{
       font-weight:800;
@@ -62,8 +69,8 @@
     .navlinks{
       display:flex;
       gap:18px;
-      font-weight:500;
       font-size:14px;
+      font-weight:500;
     }
     .navlinks a{
       color:rgba(255,255,255,0.94);
@@ -72,50 +79,54 @@
     .navlinks a.active{
       border-bottom:2px solid var(--accent);
     }
+
+    /* HERO */
     .hero{
       padding:60px 0 40px;
       background:
-        radial-gradient(circle at top left,#e0ecff,transparent 55%),
-        radial-gradient(circle at bottom right,#ffe9d0,transparent 55%);
+        radial-gradient(circle at top left,#e1ecff,transparent 55%),
+        radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
     }
     .hero-grid{
       display:flex;
-      gap:32px;
-      align-items:center;
       flex-wrap:wrap;
+      gap:28px;
+      align-items:center;
     }
     .hero-main{
       flex:1 1 320px;
+      min-width:280px;
     }
     .hero-kicker{
       font-size:12px;
       text-transform:uppercase;
       letter-spacing:.22em;
       color:var(--muted);
-      margin-bottom:10px;
+      margin-bottom:8px;
     }
-    .hero h1{
+    .hero-title{
       font-size:34px;
       line-height:1.2;
       color:var(--primary);
       margin-bottom:10px;
+      font-weight:800;
     }
     .hero-sub{
       font-size:15px;
       color:#1f2933;
-      margin-bottom:16px;
+      margin-bottom:14px;
     }
     .badge-row{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
     .badge{
-      background:rgba(10,61,98,0.07);
+      font-size:11px;
       border-radius:999px;
       padding:6px 12px;
-      font-size:11px;
+      background:rgba(10,61,98,0.07);
       color:#0b365c;
     }
     .cta-row{
@@ -147,21 +158,22 @@
       display:flex;
       flex-wrap:wrap;
       gap:18px;
-      margin-top:18px;
+      margin-top:16px;
       font-size:12px;
       color:var(--muted);
     }
     .hero-meta strong{color:#111827}
-    .hero-visual{
-      flex:1 1 280px;
+
+    .hero-side{
+      flex:1 1 260px;
       min-width:260px;
     }
     .hero-card{
-      background:linear-gradient(145deg,#0a3d62,#163f72);
-      border-radius:20px;
+      background:linear-gradient(145deg,#0a3d62,#193f76);
+      border-radius:18px;
       padding:18px;
       color:#fff;
-      box-shadow:0 20px 40px rgba(5,25,55,0.6);
+      box-shadow:0 18px 36px rgba(5,25,55,0.65);
     }
     .hero-card h3{
       font-size:18px;
@@ -173,13 +185,13 @@
     }
     .hero-kpi{
       display:flex;
-      gap:12px;
       flex-wrap:wrap;
+      gap:12px;
       margin-top:10px;
       font-size:12px;
     }
     .hero-kpi-item{
-      background:rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.09);
       border-radius:12px;
       padding:8px 10px;
     }
@@ -188,6 +200,8 @@
       font-size:17px;
       font-weight:700;
     }
+
+    /* SECTIONS */
     .section{
       padding:32px 0;
     }
@@ -205,7 +219,7 @@
     .section-header p{
       font-size:13px;
       color:var(--muted);
-      max-width:430px;
+      max-width:420px;
     }
     .grid{
       display:grid;
@@ -216,7 +230,7 @@
       background:var(--card);
       border-radius:14px;
       padding:16px 16px 18px;
-      box-shadow:0 10px 30px rgba(15,23,42,0.06);
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
     }
     .card h3, .card h4{
       font-size:16px;
@@ -249,15 +263,15 @@
       list-style:none;
       padding-left:0;
       font-size:13px;
+      color:var(--muted);
     }
     .timeline li{
       margin-bottom:8px;
       padding-left:18px;
       position:relative;
-      color:var(--muted);
     }
     .timeline li::before{
-      content:'•';
+      content:"•";
       position:absolute;
       left:0;
       top:0;
@@ -288,6 +302,8 @@
       font-size:18px;
       color:#111827;
     }
+
+    /* FOOTER */
     .footer{
       background:#0b2b4a;
       color:#fff;
@@ -302,7 +318,9 @@
       justify-content:space-between;
     }
     .footer a{color:#e5e7eb}
+
     .small{font-size:12px;color:var(--muted);}
+
     @media (max-width:800px){
       .navlinks{display:none;}
       .hero-grid{flex-direction:column;}
@@ -312,12 +330,11 @@
 </head>
 <body>
 
-  <!-- HEADER / NAVBAR -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container nav">
       <div class="logo-wrap">
-        <!-- अगर आपके पास assets/logo.svg है तो यह image दिखेगी; नहीं है तो आप logo हटा सकते हैं -->
-        <img src="assets/logo.svg" alt="URP logo">
+        <div class="logo-mark">URP</div>
         <div class="brand-title">Uttarakhand Reform Party</div>
       </div>
       <nav class="navlinks">
@@ -332,34 +349,38 @@
   </header>
 
   <main>
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-main">
           <div class="hero-kicker">UTTARAKHAND REFORM PARTY • URP</div>
-          <h1>बदलाव भी, ज़िम्मेदारी भी — एक नया उत्तराखंड</h1>
+          <h1 class="hero-title">बदलाव भी, ज़िम्मेदारी भी — एक नया उत्तराखंड</h1>
           <p class="hero-sub">
-            25 साल में सरकारें बदलीं, पर सिस्टम नहीं। URP का लक्ष्य है पारदर्शी शासन, पहाड़-केंद्रित विकास और 
-            युवा-नेतृत्व वाला बदलाव।
+            25 साल में सरकारें बदलीं, पर सिस्टम नहीं। URP का लक्ष्य है पारदर्शी शासन, पहाड़-केंद्रित विकास
+            और युवा-नेतृत्व वाला बदलाव।
           </p>
+
           <div class="badge-row">
             <div class="badge">Mountain-first development</div>
             <div class="badge">Transparent governance</div>
             <div class="badge">Youth & Women empowerment</div>
           </div>
+
           <div class="cta-row">
             <a href="join.html" class="btn-primary">URP से जुड़ें</a>
             <a href="vision.html" class="btn-ghost">हमारा विज़न देखें</a>
           </div>
+
           <div class="hero-meta">
-            <div><strong>70</strong> विधानसभा सीटों पर सोच, संगठन और रणनीति</div>
-            <div><strong>45–50</strong> seats को serious winning target बनाकर तैयारी</div>
+            <div><strong>70</strong> विधानसभा सीटों पर संगठन की तैयारी</div>
+            <div><strong>45–50</strong> सीटों को serious winning लक्ष्य बनाने की रणनीति</div>
           </div>
         </div>
-        <div class="hero-visual">
+
+        <div class="hero-side">
           <div class="hero-card">
             <h3>100-दिन का सुधार कार्यक्रम</h3>
-            <p>पहले 100 दिनों में measurable काम — कागजों में नहीं, जनता की नज़र में दिखने वाला बदलावा।</p>
+            <p>पहले 100 दिनों में measurable काम — कागज़ पर नहीं, जनता की नज़र में दिखने वाला बदलाव।</p>
             <div class="hero-kpi">
               <div class="hero-kpi-item">
                 <span>100+</span>
@@ -375,20 +396,19 @@
       </div>
     </section>
 
-    <!-- SIX PILLARS -->
+    <!-- 6 PILLARS -->
     <section class="section">
       <div class="container">
         <div class="section-header">
           <h2>URP के 6 मुख्य आधार</h2>
           <p>
-            URP सिर्फ़ चुनावी पार्टी नहीं, बल्कि एक long-term reform platform है। यहाँ slogans नहीं,
-            बल्कि clear pillars और measurable commitments हैं।
+            URP slogans से नहीं, clear pillars से चलता है। हर आधार पर measurable commitments और public tracking होगा।
           </p>
         </div>
         <div class="grid">
           <div class="card">
             <h3>1. पारदर्शी शासन</h3>
-            <p>हर काम का photo, geo-tag, खर्च और deadline — सब जनता के लिए online dashboard पर।</p>
+            <p>हर काम का photo, geo-tag, खर्च और deadline — सब online public dashboard पर।</p>
             <div class="tag-row">
               <div class="tag">Online tracking</div>
               <div class="tag">Citizen audit</div>
@@ -396,7 +416,7 @@
           </div>
           <div class="card">
             <h3>2. पहाड़-केंद्रित नीति</h3>
-            <p>सिर्फ़ मैदानी फ़ोकस नहीं — hill blocks के लिए अलग योजना, अलग बजट और priority।</p>
+            <p>सिर्फ़ मैदानी नहीं — hill blocks के लिए अलग योजना, अलग बजट और priority।</p>
             <div class="tag-row">
               <div class="tag">Anti-migration</div>
               <div class="tag">Village clusters</div>
@@ -404,15 +424,11 @@
           </div>
           <div class="card">
             <h3>3. युवा सशक्तिकरण</h3>
-            <p>Skill hub, local job mapping, startup support — “10 km radius के अंदर रोजगार” मॉडल।</p>
-            <div class="tag-row">
-              <div class="tag">Skill hubs</div>
-              <div class="tag">Entrepreneurship</div>
-            </div>
+            <p>Skill hubs, local job mapping, startup support — “10 km radius में रोज़गार” मॉडल।</p>
           </div>
           <div class="card">
             <h3>4. महिला सुरक्षा व सम्मान</h3>
-            <p>मार्केट, स्कूल, bus-stand: lighting, CCTV, help-desk और फास्ट response mechanism।</p>
+            <p>मार्केट, school, bus-stand: lighting, CCTV, help-desk और fast response system।</p>
           </div>
           <div class="card">
             <h3>5. ग्रामीण आजीविका</h3>
@@ -420,7 +436,7 @@
           </div>
           <div class="card">
             <h3>6. स्वच्छ राजनीति</h3>
-            <p>Candidate selection के लिए साफ़ criteria — serious criminal background वाले नाम नहीं।</p>
+            <p>Ticket “connection” से नहीं, साफ criteria से — serious criminal background वालों को जगह नहीं।</p>
           </div>
         </div>
       </div>
@@ -434,12 +450,12 @@
             <h2>क्यों चाहिए नया विकल्प?</h2>
           </div>
           <p class="small" style="margin-bottom:10px;">
-            BJP और Congress दोनों ने उत्तराखंड पर शासन किया, लेकिन आज भी पलायन, बेरोज़गारी, स्वास्थ्य और शिक्षा
-            जैसे मुद्दे वहीं के वहीं हैं। URP मानता है कि “पुरानी राजनीति से नया भविष्य नहीं बन सकता।”
+            BJP और Congress दोनों ने उत्तराखंड पर शासन किया, लेकिन आज भी पलायन, बेरोज़गारी, स्वास्थ्य और शिक्षा के
+            मुद्दे वहीं हैं। URP मानता है — “पुरानी राजनीति से नया भविष्य नहीं बन सकता”।
           </p>
           <ul class="timeline">
-            <li>पिछले 20+ साल के report card का ईमानदार review — सिर्फ़ जीत का नहीं, काम का।</li>
-            <li>UKD जैसी क्षेत्रीय भावना को modern तरीके से strengthen करना, oppose नहीं।</li>
+            <li>20+ साल के report card का ईमानदार review — केवल seat गणित नहीं, काम का हिसाब।</li>
+            <li>UKD जैसी क्षेत्रीय भावना को modern, professional रूप में मजबूत करना — विरोध नहीं, सहयोग।</li>
             <li>Decision-making में youth, women और professionals को पहली line में लाना।</li>
           </ul>
         </div>
@@ -449,28 +465,28 @@
           </div>
           <div class="stats-row">
             <div class="stat">
-              <span>Seats Focus</span>
+              <span>Seats focus</span>
               <strong>50</strong>
             </div>
             <div class="stat">
-              <span>Core Volunteers</span>
+              <span>Core volunteers</span>
               <strong>10,000+</strong>
             </div>
             <div class="stat">
-              <span>District Teams</span>
+              <span>District teams</span>
               <strong>13</strong>
             </div>
           </div>
           <ul class="timeline" style="margin-top:10px;">
-            <li>Phase 1: सदस्यता, volunteer network, digital presence बनाना।</li>
-            <li>Phase 2: seat-wise survey, micro-issues mapping और candidate shortlisting।</li>
-            <li>Phase 3: public manifesto, booth-level structure और resources planning।</li>
+            <li>Phase 1: सदस्यता, volunteer network, digital presence।</li>
+            <li>Phase 2: seat-wise survey, micro-issues mapping, candidate shortlisting।</li>
+            <li>Phase 3: public manifesto, booth-level संरचना और संसाधन planning।</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- HOW TO JOIN QUICK STEPS -->
+    <!-- HOW TO JOIN -->
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -480,11 +496,11 @@
         <div class="grid">
           <div class="card">
             <h4>1. Online Membership Form</h4>
-            <p>Join पेज पर Google Form भरें (नाम, mobile, EPIC, जिला आदि)। डेटा सीधे secure Google Sheet में जाता है।</p>
+            <p>Join पेज पर Google Form भरें (नाम, mobile, EPIC, जिला)। Data सीधे secure Google Sheet में जाता है।</p>
           </div>
           <div class="card">
             <h4>2. Verification & Role</h4>
-            <p>District coordinator WhatsApp / call से आपसे connect करेगा और आपकी भूमिका पर चर्चा करेगा।</p>
+            <p>District coordinator WhatsApp / call से संपर्क कर आपकी भूमिका और availability समझेगा।</p>
           </div>
           <div class="card">
             <h4>3. Local Team में शामिल</h4>
@@ -492,10 +508,10 @@
           </div>
           <div class="card">
             <h4>4. Candidate Track (Optional)</h4>
-            <p>जो लोग चुनाव लड़ना चाहते हैं, उनके लिए अतिरिक्त evaluation, survey और eligibility process होगा।</p>
+            <p>जो लोग चुनाव लड़ना चाहते हैं, उनके लिए अतिरिक्त eligibility, survey और public feedback process होगा।</p>
           </div>
         </div>
-        <p style="font-size:13px;color:var(--muted);margin-top:10px;">
+        <p class="small" style="margin-top:10px;">
           तैयार हैं ज़िम्मेदारी लेने के लिए? <a href="join.html" style="color:var(--primary-soft);font-weight:600;">Join पेज</a> पर जाएँ और form भरें।
         </p>
       </div>
@@ -507,7 +523,7 @@
     <div class="container footer-grid">
       <div>
         <div>© 2025 Uttarakhand Reform Party</div>
-        <div class="small">Registered as a reform-focused political platform for Uttarakhand.</div>
+        <div class="small">Reform-focused political platform for Uttarakhand.</div>
       </div>
       <div class="small">
         <div>Contact: contact@uttarakhandreform.org</div>
