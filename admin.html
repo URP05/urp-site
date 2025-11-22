@@ -3,38 +3,135 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>URP Admin</title>
-<link rel="stylesheet" href="assets/style.css">
+<title>URP Admin Panel</title>
+
+<style>
+  :root{
+    --primary:#0a3d62;
+    --accent:#f39c12;
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --muted:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:#111827;
+  }
+
+  .header{
+    background:linear-gradient(90deg,var(--primary),#3b6df3);
+    color:#fff;
+    padding:12px 0;
+    box-shadow:0 4px 14px rgba(15,35,75,0.35);
+  }
+  .container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 18px;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo img{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:#fff;
+    padding:2px;
+    object-fit:cover;
+  }
+  .logo-title{
+    font-weight:700;
+    font-size:15px;
+  }
+
+  main{
+    padding:26px 0;
+  }
+
+  h3{
+    margin-bottom:6px;
+    color:#0b2b4a;
+  }
+  .small{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  .cta{
+    margin-top:12px;
+    background:var(--accent);
+    border:none;
+    color:#111827;
+    padding:8px 14px;
+    border-radius:6px;
+    font-weight:600;
+    cursor:pointer;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 6px 14px rgba(0,0,0,0.05);
+  }
+  th, td{
+    border:1px solid #e5e7eb;
+    padding:8px 10px;
+    font-size:13px;
+    text-align:left;
+  }
+  th{
+    background:#f1f5f9;
+    font-weight:600;
+  }
+
+  .footer{
+    background:#0b2b4a;
+    color:#fff;
+    padding:16px 0;
+    margin-top:20px;
+    font-size:12px;
+  }
+</style>
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
     <div class="logo">
-      <!-- पुराना: <img src="assets/logo.svg" ...> -->
-      <!-- नया logo वही use जो बाकी pages पर है -->
-      <img src="logo%20urp.png" alt="URP logo"
-           style="width:44px;height:44px;border-radius:50%;background:#fff;padding:2px;object-fit:cover;">
-      <div style="color:white;margin-left:8px;font-weight:700;">
-        Uttarakhand Reform Party
-      </div>
+      <img src="logo%20urp.png" alt="URP logo">
+      <div class="logo-title">Uttarakhand Reform Party — Admin</div>
     </div>
   </div>
 </header>
 
-<main class="container section">
-  <h3>Admin — Membership (Local)</h3>
+<main class="container">
+  <h3>Membership Records (Local Device)</h3>
   <p class="small">
-    This page reads members saved locally on this device by the legacy demo form.  
-    For real data, prefer the Google Forms + Sheet pipeline.
+    यह पृष्ठ केवल इस डिवाइस पर सेव किए गए स्थानीय डेटा को दिखाता है।  
+    मुख्य सदस्यता डेटा Google Form और Google Sheet के ज़रिए सुरक्षित रूप से प्रबंधित किया जाता है।
   </p>
 
   <button id="export" class="cta">Export CSV</button>
-  <table id="tab" style="width:100%;margin-top:12px"></table>
+
+  <table id="tab"></table>
 </main>
 
 <footer class="footer">
-  <div class="container">© 2025 URP</div>
+  <div class="container">© 2025 Uttarakhand Reform Party</div>
 </footer>
 
 <script>
@@ -42,23 +139,27 @@ function render(){
   var arr = JSON.parse(localStorage.getItem('urp_members') || '[]');
   var t = document.getElementById('tab');
   t.innerHTML = '';
-  if (!arr.length){
-    t.innerHTML = '<tr><td class="small">No local members</td></tr>';
+
+  if(!arr.length){
+    t.innerHTML = '<tr><td class="small">कोई स्थानीय डेटा उपलब्ध नहीं है</td></tr>';
     return;
   }
+
   var header = '<tr><th>#</th><th>Name</th><th>Mobile</th><th>EPIC</th><th>District</th></tr>';
   var rows = arr.map(function(r,i){
     return '<tr><td>'+(i+1)+'</td><td>'+r.name+'</td><td>'+r.mobile+'</td><td>'+r.epic+'</td><td>'+r.district+'</td></tr>';
   }).join('');
+
   t.innerHTML = header + rows;
 }
 
 function exportCSV(){
   var arr = JSON.parse(localStorage.getItem('urp_members') || '[]');
-  if (!arr.length){
-    alert('No data');
+  if(!arr.length){
+    alert('कोई डेटा नहीं है');
     return;
   }
+
   var csv = [['Name','Mobile','EPIC','District']]
     .concat(arr.map(function(o){ return [o.name,o.mobile,o.epic,o.district]; }))
     .map(function(r){ return r.join(','); })
