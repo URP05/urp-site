@@ -47,17 +47,14 @@
       align-items:center;
       gap:10px;
     }
-    .logo-mark{
-      width:36px;
-      height:36px;
+    /* ⬇️ नया logo image (पुराना .logo-mark हटा दिया गया) */
+    .logo-img{
+      width:44px;
+      height:44px;
       border-radius:50%;
+      object-fit:cover;
       background:#fff;
-      color:var(--primary);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      font-size:14px;
+      box-shadow:0 0 0 2px rgba(255,255,255,0.7);
     }
     .brand-title{
       font-weight:800;
@@ -197,7 +194,8 @@
   <header class="header">
     <div class="container nav">
       <div class="logo-wrap">
-        <div class="logo-mark">URP</div>
+        <!-- ⬇️ नया logo यहां -->
+        <img src="logo%20urp.png" alt="URP logo" class="logo-img">
         <div class="brand-title">Uttarakhand Reform Party</div>
       </div>
       <nav class="navlinks">
@@ -266,7 +264,13 @@
             Loading…
           </iframe>
           <p class="small" style="margin-top:6px;">
-            अगर form दिखाई न दे, तो <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?usp=sf_link" target="_blank" style="color:var(--primary-soft);font-weight:600;">इस सीधा लिंक</a> पर क्लिक करके form भर सकते हैं।
+            अगर form दिखाई न दे, तो 
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?usp=sf_link" 
+               target="_blank" 
+               style="color:var(--primary-soft);font-weight:600;">
+              इस सीधा लिंक
+            </a> 
+            पर क्लिक करके form भर सकते हैं।
           </p>
         </div>
       </div>
