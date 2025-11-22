@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Vision — Uttarakhand Reform Party</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="URP का विज़न उत्तराखंड के लिए पारदर्शी शासन, पलायन रोकने, बेहतर स्वास्थ्य-शिक्षा और सम्मानजनक रोज़गार पर केंद्रित है।">
+  <meta name="description" content="URP’s vision for Uttarakhand focuses on transparent governance, local jobs, women’s safety, better health and education, reversing migration and protecting the environment.">
 
-  <!-- SAME INLINE STYLE (match with Home & About) -->
   <style>
     :root{
       --primary:#0a3d62;
@@ -24,6 +23,7 @@
     }
     a{text-decoration:none;color:inherit}
 
+    /* HEADER */
     .header{
       background:linear-gradient(90deg,var(--primary),#3b6df3);
       color:#fff;
@@ -48,7 +48,6 @@
       align-items:center;
       gap:10px;
     }
-    /* नया logo image (पुरानी logo-mark हटाई गई) */
     .logo-img{
       width:44px;
       height:44px;
@@ -76,11 +75,19 @@
       border-bottom:2px solid var(--accent);
     }
 
+    /* HERO */
     .hero{
       padding:46px 0 26px;
       background:
         radial-gradient(circle at top left,#e1ecff,transparent 55%),
         radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
+    }
+    .hero-kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-bottom:6px;
     }
     .hero-title{
       font-size:30px;
@@ -94,14 +101,8 @@
       color:#1f2933;
       max-width:720px;
     }
-    .hero-kicker{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      color:var(--muted);
-      margin-bottom:6px;
-    }
 
+    /* SECTIONS */
     .section{
       padding:30px 0;
     }
@@ -176,6 +177,46 @@
     }
     .small{font-size:12px;color:var(--muted);}
 
+    /* 6-PILLAR SLIDER */
+    .pillars-slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+    }
+    .pillars-track{
+      display:flex;
+      transition:transform 0.45s ease;
+    }
+    .pillar-slide{
+      min-width:100%;
+      flex-shrink:0;
+      padding-right:4px;
+      box-sizing:border-box;
+    }
+    .pillar-slide .card{
+      height:100%;
+    }
+    .slider-dots{
+      display:flex;
+      justify-content:center;
+      gap:6px;
+      margin-top:10px;
+    }
+    .slider-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:#d1d5db;
+      border:none;
+      padding:0;
+      cursor:pointer;
+    }
+    .slider-dot.active{
+      width:18px;
+      background:var(--primary-soft);
+    }
+
+    /* FOOTER */
     .footer{
       background:#0b2b4a;
       color:#fff;
@@ -194,6 +235,9 @@
     @media (max-width:800px){
       .navlinks{display:none;}
     }
+    @media (min-width:900px){
+      .pillar-slide{padding:0 60px;}
+    }
   </style>
 </head>
 <body>
@@ -202,7 +246,6 @@
   <header class="header">
     <div class="container nav">
       <div class="logo-wrap">
-        <!-- नया logo यहां use हो रहा है -->
         <img src="logo%20urp.png" alt="URP logo" class="logo-img">
         <div class="brand-title">Uttarakhand Reform Party</div>
       </div>
@@ -221,141 +264,163 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <div class="hero-kicker">विजन • संक्षिप्त रूप</div>
-        <h1 class="hero-title">URP का विज़न: सुरक्षित, सक्षम और सम्मानित उत्तराखंड</h1>
+        <div class="hero-kicker">VISION • SHORT DOCUMENT</div>
+        <h1 class="hero-title">URP’s vision: a secure, capable and respected Uttarakhand</h1>
         <p class="hero-sub">
-          हमारा लक्ष्य केवल सरकार बदलना नहीं, बल्कि शासन की गुणवत्ता बदलना है।  
-          सीधी बात — <strong>“काम दिखे, आँकड़े साफ़ हों और जनता खुद निर्णय करे।”</strong>
+          Our goal is not only to change governments, but to improve the quality of governance.
+          Simply put — <strong>“Work should be visible, numbers should be clear and citizens should decide.”</strong>
         </p>
       </div>
     </section>
 
-    <!-- PILLAR CARDS -->
+    <!-- 6-PILLAR SLIDER -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <h2>6 आधार स्तंभ (संक्षिप्त दस्तावेज़)</h2>
-          <p>विस्तृत घोषणापत्र जनता से सीधी बातचीत और सर्वे के बाद तैयार किया जाएगा। यह उसका संक्षिप्त ढाँचा है।</p>
+          <h2>Six-pillar vision (short)</h2>
+          <p>This is a concise framework. The detailed manifesto will be prepared after seat-wise surveys and conversations with citizens.</p>
         </div>
 
-        <div class="grid">
-          <!-- Governance -->
-          <div class="card">
-            <h3>1. शासन और पारदर्शिता</h3>
-            <p>“फाइल से बाहर, जनता की नज़र में” — हर काम, हर खर्च और हर समय-सीमा खुलकर लोगों के सामने।</p>
-            <ul class="timeline">
-              <li>ज़िला-वार सार्वजनिक पोर्टल: योजना का नाम, लागत, ठेकेदार, स्थिति, तस्वीरें और स्थान-चिह्न।</li>
-              <li>हर तीन महीने में सार्वजनिक रिपोर्ट — सिर्फ़ भाषण नहीं, बल्कि आँकड़ों के साथ जवाबदेही।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">खुला डैशबोर्ड</div>
-              <div class="tag">जनता की निगरानी</div>
+        <div class="pillars-slider">
+          <div class="pillars-track" id="visionTrack">
+            <!-- 1 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>1. Governance & Transparency</h3>
+                <p>
+                  “Out of the file, into public view” — every major project, cost and timeline should be visible to people, not hidden in paperwork.
+                </p>
+                <ul class="timeline">
+                  <li>District-wise public portal with project name, budget, contractor, status, photos and location.</li>
+                  <li>Quarterly public report — not just speeches, but clear numbers and progress updates.</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Public dashboards</div>
+                  <div class="tag">Citizen monitoring</div>
+                </div>
+              </article>
             </div>
-          </div>
-
-          <!-- Employment -->
-          <div class="card">
-            <h3>2. रोज़गार और युवा सशक्तिकरण</h3>
-            <p>“अपने ज़िले से ही कमाई” — नौकरी के लिए राज्य से बाहर भागना मजबूरी न रहे।</p>
-            <ul class="timeline">
-              <li>हर ज़िले में बहु-कौशल केंद्र — आईटी, पर्यटन, लॉजिस्टिक्स, कृषि-प्रसंस्करण और डिजिटल सेवाएँ।</li>
-              <li>स्थानीय रोज़गार मानचित्र पोर्टल — कौन-सी कंपनी कहाँ भर्ती कर रही है, यह साफ़ दिखे।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">कौशल केंद्र</div>
-              <div class="tag">स्थानीय रोज़गार मानचित्र</div>
+            <!-- 2 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>2. Jobs & Youth Empowerment</h3>
+                <p>
+                  “Earn from your own district” — young people should not be forced to leave the state for every job opportunity.
+                </p>
+                <ul class="timeline">
+                  <li>Multi-skill hubs in every district — IT, tourism, logistics, agro-processing and digital services.</li>
+                  <li>Local job-mapping portal that clearly shows which companies are hiring and where.</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Skill hubs</div>
+                  <div class="tag">District job portal</div>
+                </div>
+              </article>
             </div>
-          </div>
-
-          <!-- Women -->
-          <div class="card">
-            <h3>3. महिला सुरक्षा और अवसर</h3>
-            <p>सड़क, बाज़ार, स्कूल, कार्यस्थल — हर जगह सुरक्षित माहौल और सम्मानजनक व्यवहार।</p>
-            <ul class="timeline">
-              <li>मुख्य शहरी इलाकों में बेहतर रोशनी, CCTV, महिला सहायता-डेस्क और समर्पित त्वरित प्रतिक्रिया दल।</li>
-              <li>महिला स्वयं सहायता समूहों को पर्यटन, भोजन, हस्तशिल्प और सेवाओं से जुड़ी स्थायी आय-श्रृंखलाओं से जोड़ना।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">सुरक्षित शहर</div>
-              <div class="tag">महिला स्व-सहायता समूह</div>
+            <!-- 3 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>3. Women’s Safety & Opportunity</h3>
+                <p>
+                  Streets, markets, schools and workplaces must be safe and respectful for women in daily life.
+                </p>
+                <ul class="timeline">
+                  <li>Well-lit key areas, CCTV, women’s help-desk and rapid response teams in urban centres.</li>
+                  <li>Stronger linkages between women’s self-help groups and tourism, food, crafts and service-based income chains.</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Safe cities</div>
+                  <div class="tag">Women SHG economy</div>
+                </div>
+              </article>
             </div>
-          </div>
-
-          <!-- Health & Education -->
-          <div class="card">
-            <h3>4. स्वास्थ्य और शिक्षा में सुधार</h3>
-            <p>अस्पताल और स्कूल सिर्फ़ उद्घाटन के लिए नहीं, बल्कि वास्तविक गुणवत्ता के आधार पर आंके जाएँगे।</p>
-            <ul class="timeline">
-              <li>ज़िला अस्पतालों में 24×7 आपातकालीन व्यवस्था और विशेषज्ञों की पाली; दूरदराज़ क्षेत्रों के लिए टेली-मेडिसिन।</li>
-              <li>पहाड़ी स्कूलों में शिक्षक-तैनाती की समीक्षा, डिजिटल कक्षाएँ और स्थानीय भाषा में पढ़ाई की मदद।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">स्वास्थ्य समीक्षा</div>
-              <div class="tag">शिक्षक मानचित्रण</div>
+            <!-- 4 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>4. Health & Education Reset</h3>
+                <p>
+                  Hospitals and schools should be judged by outcomes, not just buildings and photo-ops.
+                </p>
+                <ul class="timeline">
+                  <li>District hospitals with 24×7 emergency services, specialists and tele-medicine support for hill blocks.</li>
+                  <li>Teacher-posting audits, digital classrooms and local-language support in difficult hill schools.</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Health audit</div>
+                  <div class="tag">Teacher mapping</div>
+                </div>
+              </article>
             </div>
-          </div>
-
-          <!-- Migration -->
-          <div class="card">
-            <h3>5. पलायन रोकना और गाँवों का पुनर्जीवन</h3>
-            <p>खाली होते गाँव केवल यादों का विषय न रहें — उन्हें नए आर्थिक मॉडल के साथ वापस जीवंत बनाना।</p>
-            <ul class="timeline">
-              <li>“गाँव अपनाओ” मॉडल — युवाओं, भूतपूर्व सैनिकों और प्रवासी उत्तराखंडियों को गाँवों के पुनर्जीवन से जोड़ना।</li>
-              <li>कृषि-पर्यटन, होमस्टे, अध्ययन-केंद्र और पहाड़ों पर आधारित छोटे कैंपस जैसी योजनाएँ।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">पलायन पर रोक</div>
-              <div class="tag">गाँवों को नया जीवन</div>
+            <!-- 5 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>5. Reverse Migration & Revive Villages</h3>
+                <p>
+                  Emptying villages should not remain only a matter of nostalgia — they should be revived through new economic models.
+                </p>
+                <ul class="timeline">
+                  <li>“Adopt-a-village” style initiatives linking youth, ex-servicemen and the Uttarakhand diaspora to village revival.</li>
+                  <li>Eco-tourism, homestays, learning centres and small campuses rooted in mountain life.</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Check migration</div>
+                  <div class="tag">Village revival</div>
+                </div>
+              </article>
             </div>
-          </div>
-
-          <!-- Environment & Disaster -->
-          <div class="card">
-            <h3>6. पर्यावरण संरक्षण और आपदा तैयारियाँ</h3>
-            <p>उत्तराखंड का भविष्य नदियों, पहाड़ों और जंगलों से जुड़ा है — इन्हें नज़रअंदाज़ कर कोई नीति टिकाऊ नहीं हो सकती।</p>
-            <ul class="timeline">
-              <li>पानी के स्रोतों और नदियों का पुनर्जीवन, भूस्खलन-प्रवण क्षेत्रों की पहचान और रोकथाम के काम।</li>
-              <li>हर विकासखण्ड में आपदा-प्रशिक्षित स्वयंसेवक नेटवर्क और नियमित अभ्यास (मॉक ड्रिल)।</li>
-            </ul>
-            <div class="tag-row">
-              <div class="tag">पर्यावरण-संवेदनशील विकास</div>
-              <div class="tag">तैयार आपदा-तंत्र</div>
+            <!-- 6 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>6. Environment & Disaster Preparedness</h3>
+                <p>
+                  Uttarakhand’s future is tied to its rivers, forests and mountains. Development that ignores this cannot be sustainable.
+                </p>
+                <ul class="timeline">
+                  <li>Reviving springs and rivers, mapping landslide-prone zones and preventive work in vulnerable areas.</li>
+                  <li>Block-level disaster-ready volunteer networks with regular drills and training.</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Environment-sensitive growth</div>
+                  <div class="tag">Prepared response system</div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
+        <div class="slider-dots" id="visionDots"></div>
       </div>
     </section>
 
-    <!-- HOW THIS VISION WILL BE BUILT -->
+    <!-- FROM VISION TO POLICY -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <h2>विजन से नीति तक — कैसी होगी प्रक्रिया?</h2>
-          <p>यह विज़न ऊपर से थोपा हुआ कागज़ी दस्तावेज़ नहीं होगा; हर क्षेत्र के लोगों से बात करके इसे ज़िला और विधानसभा स्तर पर बदला और सुधारा जाएगा।</p>
+          <h2>From vision to policy — how will it be built?</h2>
+          <p>This vision is not a top-down document. It will be refined with people in each district and constituency.</p>
         </div>
         <div class="grid">
           <div class="card">
-            <h4>1. विधानसभा-वार सर्वे</h4>
+            <h4>1. Constituency-level surveys</h4>
             <p class="small">
-              हर विधानसभा क्षेत्र में संरचित सर्वे — युवाओं, महिलाओं, किसानों, छोटे कारोबारियों और कर्मचारियों की प्राथमिकताएँ अलग-अलग दर्ज की जाएँगी।
+              Structured surveys in every assembly seat to capture separate priorities of youth, women, farmers, workers and small business owners.
             </p>
           </div>
           <div class="card">
-            <h4>2. नीति समूह (Policy Labs)</h4>
+            <h4>2. Policy groups (“policy labs”)</h4>
             <p class="small">
-              स्वयंसेवकों और क्षेत्र विशेषज्ञों की छोटी-छोटी टीमें, जहाँ स्वास्थ्य, शिक्षा, पर्यटन, पर्यावरण आदि पर व्यवहारिक नीति-ड्राफ्ट तैयार हों।
+              Small teams of volunteers and subject experts to draft practical policy ideas on health, education, tourism, environment and livelihoods.
             </p>
           </div>
           <div class="card">
-            <h4>3. सार्वजनिक मसौदा और सुझाव</h4>
+            <h4>3. Public draft and feedback</h4>
             <p class="small">
-              घोषणापत्र का प्रारम्भिक मसौदा सार्वजनिक किया जाएगा, ताकि लोग ऑनलाइन और ज़मीन पर दोनों स्तरों पर अपना सुझाव दे सकें।
+              A draft manifesto will be shared openly so that citizens can suggest changes both online and through local meetings.
             </p>
           </div>
           <div class="card">
-            <h4>4. मापने योग्य लक्ष्य</h4>
+            <h4>4. Measurable targets</h4>
             <p class="small">
-              हर क्षेत्र के लिए 100 दिन, 2 साल और 5 साल के स्पष्ट लक्ष्य तय किए जाएँगे, जिनकी प्रगति पर हर साल सार्वजनिक रिपोर्ट जारी होगी।
+              Clear 100-day, 2-year and 5-year goals for each area, with annual public progress reports that people can verify.
             </p>
           </div>
         </div>
@@ -368,7 +433,7 @@
     <div class="container footer-grid">
       <div>
         <div>© 2025 Uttarakhand Reform Party</div>
-        <div class="small">उत्तराखंड के लिए सुधार-केंद्रित राजनीतिक मंच।</div>
+        <div class="small">A reform-focused political platform for Uttarakhand.</div>
       </div>
       <div class="small">
         <div>Contact: contact@uttarakhandreform.org</div>
@@ -380,6 +445,56 @@
       </div>
     </div>
   </footer>
+
+  <!-- SLIDER SCRIPT -->
+  <script>
+    (function(){
+      var track = document.getElementById('visionTrack');
+      var dotsWrap = document.getElementById('visionDots');
+      if(!track || !dotsWrap) return;
+
+      var slides = Array.prototype.slice.call(track.querySelectorAll('.pillar-slide'));
+      if(!slides.length) return;
+
+      var current = 0;
+      var total = slides.length;
+      var autoTimer = null;
+
+      slides.forEach(function(_, idx){
+        var btn = document.createElement('button');
+        btn.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+        btn.type = 'button';
+        btn.addEventListener('click', function(){
+          goTo(idx);
+          resetAuto();
+        });
+        dotsWrap.appendChild(btn);
+      });
+
+      var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.slider-dot'));
+
+      function goTo(index){
+        if(index < 0) index = total - 1;
+        if(index >= total) index = 0;
+        current = index;
+        track.style.transform = 'translateX(' + (-100 * current) + '%)';
+        dots.forEach(function(d,i){
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function next(){
+        goTo(current + 1);
+      }
+
+      function resetAuto(){
+        if(autoTimer) clearInterval(autoTimer);
+        autoTimer = setInterval(next, 7000);
+      }
+
+      resetAuto();
+    })();
+  </script>
 
 </body>
 </html>
