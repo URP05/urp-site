@@ -119,10 +119,10 @@
 </header>
 
 <main class="container">
-  <h3>Membership Records (Local Device)</h3>
+  <h3>Membership records (local device view)</h3>
   <p class="small">
-    यह पृष्ठ केवल इस डिवाइस पर सेव किए गए स्थानीय डेटा को दिखाता है।  
-    मुख्य सदस्यता डेटा Google Form और Google Sheet के ज़रिए सुरक्षित रूप से प्रबंधित किया जाता है।
+    This page only shows membership data saved locally on this device.  
+    Core membership data is securely managed through Google Forms and Google Sheets.
   </p>
 
   <button id="export" class="cta">Export CSV</button>
@@ -141,7 +141,7 @@ function render(){
   t.innerHTML = '';
 
   if(!arr.length){
-    t.innerHTML = '<tr><td class="small">कोई स्थानीय डेटा उपलब्ध नहीं है</td></tr>';
+    t.innerHTML = '<tr><td class="small">No local membership data found on this device.</td></tr>';
     return;
   }
 
@@ -156,7 +156,7 @@ function render(){
 function exportCSV(){
   var arr = JSON.parse(localStorage.getItem('urp_members') || '[]');
   if(!arr.length){
-    alert('कोई डेटा नहीं है');
+    alert('No data available to export.');
     return;
   }
 
