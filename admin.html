@@ -1,84 +1,23 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>URP Admin</title>
 <link rel="stylesheet" href="assets/style.css">
-
-<style>
-.header{
-  background:linear-gradient(90deg,#0a3d62,#3b6df3);
-  color:#fff;
-  box-shadow:0 4px 14px rgba(15,35,75,0.35);
-}
-.container{
-  max-width:1120px;
-  margin:0 auto;
-  padding:0 18px;
-}
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:12px 0;
-}
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.logo img{
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  background:#fff;
-  object-fit:cover;
-  box-shadow:0 0 0 2px rgba(255,255,255,0.7);
-}
-.logo div{
-  font-weight:800;
-  font-size:15px;
-  letter-spacing:.03em;
-}
-.section{
-  padding:30px 0;
-}
-.small{font-size:12px;color:#666}
-.footer{
-  background:#0b2b4a;
-  color:#fff;
-  padding:15px 0;
-  margin-top:30px;
-  text-align:center;
-}
-.cta{
-  background:#f39c12;
-  border:none;
-  padding:8px 14px;
-  border-radius:20px;
-  cursor:pointer;
-  font-weight:600;
-}
-table{
-  border-collapse:collapse;
-}
-th,td{
-  padding:8px;
-  border-bottom:1px solid #ddd;
-  font-size:13px;
-}
-</style>
 </head>
-
 <body>
 
 <header class="header">
   <div class="container nav">
     <div class="logo">
-      <!-- ✅ नया URP Logo -->
-      <img src="logo%20urp.png" alt="URP Logo">
-      <div>Uttarakhand Reform Party</div>
+      <!-- पुराना: <img src="assets/logo.svg" ...> -->
+      <!-- नया logo वही use जो बाकी pages पर है -->
+      <img src="logo%20urp.png" alt="URP logo"
+           style="width:44px;height:44px;border-radius:50%;background:#fff;padding:2px;object-fit:cover;">
+      <div style="color:white;margin-left:8px;font-weight:700;">
+        Uttarakhand Reform Party
+      </div>
     </div>
   </div>
 </header>
@@ -86,8 +25,8 @@ th,td{
 <main class="container section">
   <h3>Admin — Membership (Local)</h3>
   <p class="small">
-    This page reads members saved locally on a device by legacy demo.  
-    Prefer Google Forms for central collection.
+    This page reads members saved locally on this device by the legacy demo form.  
+    For real data, prefer the Google Forms + Sheet pipeline.
   </p>
 
   <button id="export" class="cta">Export CSV</button>
@@ -95,40 +34,43 @@ th,td{
 </main>
 
 <footer class="footer">
-  <div>© 2025 Uttarakhand Reform Party</div>
+  <div class="container">© 2025 URP</div>
 </footer>
 
 <script>
 function render(){
-  var arr=JSON.parse(localStorage.getItem('urp_members')||'[]');
-  var t=document.getElementById('tab'); 
-  t.innerHTML=''; 
-  if(!arr.length){
-    t.innerHTML='<tr><td class="small">No local members</td></tr>'; 
-    return; 
-  } 
-  var header='<tr><th>#</th><th>Name</th><th>Mobile</th><th>EPIC</th><th>District</th></tr>'; 
-  var rows=arr.map(function(r,i){
-    return '<tr><td>'+(i+1)+'</td><td>'+r.name+'</td><td>'+r.mobile+'</td><td>'+r.epic+'</td><td>'+r.district+'</td></tr>'; 
-  }).join(''); 
+  var arr = JSON.parse(localStorage.getItem('urp_members') || '[]');
+  var t = document.getElementById('tab');
+  t.innerHTML = '';
+  if (!arr.length){
+    t.innerHTML = '<tr><td class="small">No local members</td></tr>';
+    return;
+  }
+  var header = '<tr><th>#</th><th>Name</th><th>Mobile</th><th>EPIC</th><th>District</th></tr>';
+  var rows = arr.map(function(r,i){
+    return '<tr><td>'+(i+1)+'</td><td>'+r.name+'</td><td>'+r.mobile+'</td><td>'+r.epic+'</td><td>'+r.district+'</td></tr>';
+  }).join('');
   t.innerHTML = header + rows;
 }
 
 function exportCSV(){
-  var arr=JSON.parse(localStorage.getItem('urp_members')||'[]'); 
-  if(!arr.length){ alert('No data'); return; } 
-  var csv=[['Name','Mobile','EPIC','District']]
-    .concat(arr.map(function(o){return [o.name,o.mobile,o.epic,o.district];}))
-    .map(function(r){return r.join(',')})
-    .join('\n'); 
+  var arr = JSON.parse(localStorage.getItem('urp_members') || '[]');
+  if (!arr.length){
+    alert('No data');
+    return;
+  }
+  var csv = [['Name','Mobile','EPIC','District']]
+    .concat(arr.map(function(o){ return [o.name,o.mobile,o.epic,o.district]; }))
+    .map(function(r){ return r.join(','); })
+    .join('\n');
 
-  var a=document.createElement('a'); 
-  a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv); 
-  a.download='urp_members_local.csv'; 
+  var a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'urp_members_local.csv';
   a.click();
-} 
+}
 
-document.getElementById('export').onclick=exportCSV; 
+document.getElementById('export').onclick = exportCSV;
 render();
 </script>
 
