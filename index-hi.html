@@ -4,12 +4,22 @@
   <meta charset="utf-8">
   <title>उत्तराखंड रिफॉर्म पार्टी (URP) — आधिकारिक वेबसाइट</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="URP उत्तराखंड में पारदर्शी शासन, पहाड़-केंद्रित विकास और जवाबदेह राजनीति के लिए समर्पित एक सुधारवादी राजनीतिक मंच है।">
+  <meta name="description" content="URP एक सुधार-केंद्रित राजनीतिक मंच है जो उत्तराखंड में पारदर्शी शासन, पहाड़-प्रथम विकास, युवा नेतृत्व, महिलाओं की सुरक्षा और ग्रामीण आजीविका के लिए काम करता है।">
 
   <style>
-    .lang-switch{margin-left:15px;font-weight:600;}
-    .lang-switch .lang{color:#ffffff;font-size:13px;opacity:0.9;}
-    .lang-switch .lang.active{color:#f39c12;border-bottom:1px solid #f39c12;}
+    .lang-switch{
+      margin-left:15px;
+      font-weight:600;
+    }
+    .lang-switch .lang{
+      color:#ffffff;
+      font-size:13px;
+      opacity:0.9;
+    }
+    .lang-switch .lang.active{
+      color:#f39c12;
+      border-bottom:1px solid #f39c12;
+    }
 
     :root{
       --primary:#0a3d62;
@@ -20,115 +30,697 @@
       --muted:#6b7280;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:#111827;}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111827;
+    }
     a{text-decoration:none;color:inherit}
 
+    /* HEADER */
     .header{
       background:linear-gradient(90deg,var(--primary),#3b6df3);
-      color:#fff;position:sticky;top:0;z-index:10;
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
       box-shadow:0 4px 14px rgba(15,35,75,0.35);
     }
-    .container{max-width:1120px;margin:0 auto;padding:0 18px;}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
-    .logo-wrap{display:flex;align-items:center;gap:10px;}
-    .logo-img{width:44px;height:44px;border-radius:50%;background:#fff;}
-    .brand-title{font-weight:800;font-size:15px;}
-    .navlinks{display:flex;gap:18px;font-size:14px;}
-    .navlinks a.active{border-bottom:2px solid var(--accent);}
+    .container{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-img{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      object-fit:cover;
+      background:#ffffff;
+      box-shadow:0 0 0 2px rgba(255,255,255,0.7);
+    }
+    .brand-title{
+      font-weight:800;
+      letter-spacing:.03em;
+      font-size:15px;
+    }
+    .navlinks{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+      font-weight:500;
+    }
+    .navlinks a{
+      color:rgba(255,255,255,0.94);
+      padding:4px 0;
+    }
+    .navlinks a.active{
+      border-bottom:2px solid var(--accent);
+    }
 
-    .hero{padding:60px 0;background:radial-gradient(circle,#e1ecff,transparent 55%),radial-gradient(circle,#ffe7c7,transparent 55%);}
-    .hero-title{font-size:30px;font-weight:800;color:var(--primary);}
-    .hero-sub{font-size:15px;margin-top:10px;color:#1f2933;}
+    /* HERO */
+    .hero{
+      padding:60px 0 40px;
+      background:
+        radial-gradient(circle at top left,#e1ecff,transparent 55%),
+        radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
+    }
+    .hero-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:28px;
+      align-items:center;
+    }
+    .hero-main{
+      flex:1 1 320px;
+      min-width:280px;
+    }
+    .hero-kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .hero-title{
+      font-size:32px;
+      line-height:1.2;
+      color:var(--primary);
+      margin-bottom:10px;
+      font-weight:800;
+    }
+    .hero-sub{
+      font-size:15px;
+      color:#1f2933;
+      margin-bottom:14px;
+    }
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
+    }
+    .badge{
+      font-size:11px;
+      border-radius:999px;
+      padding:6px 12px;
+      background:rgba(10,61,98,0.07);
+      color:#0b365c;
+    }
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .btn-primary{
+      display:inline-block;
+      background:var(--accent);
+      color:#111827;
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+      box-shadow:0 8px 22px rgba(177,96,10,0.35);
+    }
+    .btn-ghost{
+      display:inline-block;
+      border-radius:999px;
+      border:1px solid rgba(15,35,75,0.2);
+      padding:9px 16px;
+      font-size:14px;
+      color:var(--primary-soft);
+      background:#fff;
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:16px;
+      font-size:12px;
+      color:var(--muted);
+    }
+    .hero-meta strong{color:#111827}
 
-    .section{padding:32px 0;}
-    .section-header h2{font-size:22px;margin-bottom:6px;}
+    .hero-side{
+      flex:1 1 260px;
+      min-width:260px;
+    }
+    .hero-card{
+      background:linear-gradient(145deg,#0a3d62,#193f76);
+      border-radius:18px;
+      padding:18px;
+      color:#fff;
+      box-shadow:0 18px 36px rgba(5,25,55,0.65);
+    }
+    .hero-card h3{
+      font-size:18px;
+      margin-bottom:6px;
+    }
+    .hero-card p{
+      font-size:13px;
+      opacity:.9;
+    }
+    .hero-kpi{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:10px;
+      font-size:12px;
+    }
+    .hero-kpi-item{
+      background:rgba(255,255,255,0.09);
+      border-radius:12px;
+      padding:8px 10px;
+    }
+    .hero-kpi-item span{
+      display:block;
+      font-size:17px;
+      font-weight:700;
+    }
 
-    .pillars-slider{overflow:hidden;}
-    .pillars-track{display:flex;transition:transform 0.5s;}
-    .pillar-slide{min-width:100%;padding:10px;}
-    .card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 10px 20px rgba(0,0,0,0.06);}
-    .slider-dots{text-align:center;margin-top:10px;}
-    .slider-dot{width:10px;height:10px;border-radius:50%;background:#ccc;border:none;margin:3px;}
-    .slider-dot.active{background:var(--primary);}
+    /* SECTIONS */
+    .section{
+      padding:32px 0;
+    }
+    .section-header{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:16px;
+    }
+    .section-header h2{
+      font-size:22px;
+      color:#111827;
+    }
+    .section-header p{
+      font-size:13px;
+      color:var(--muted);
+      max-width:420px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:14px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:16px 16px 18px;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+    .card h3, .card h4{
+      font-size:16px;
+      margin-bottom:6px;
+      color:#0b2b4a;
+    }
+    .card p{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:6px;
+    }
+    .tag{
+      font-size:11px;
+      border-radius:999px;
+      padding:3px 8px;
+      background:#eef2ff;
+      color:#3730a3;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:20px;
+    }
+    .timeline{
+      list-style:none;
+      padding-left:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline li{
+      margin-bottom:8px;
+      padding-left:18px;
+      position:relative;
+    }
+    .timeline li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--accent);
+      font-size:18px;
+      line-height:1;
+    }
+    .stats-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:8px;
+    }
+    .stat{
+      flex:1 1 140px;
+      background:#fff;
+      border-radius:12px;
+      padding:10px 12px;
+      box-shadow:0 8px 20px rgba(15,23,42,0.04);
+      font-size:12px;
+    }
+    .stat span{
+      display:block;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+    .stat strong{
+      font-size:18px;
+      color:#111827;
+    }
+
+    .small{font-size:12px;color:var(--muted);}
+
+    /* 6 PILLARS SLIDER */
+    .pillars-slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+    }
+    .pillars-track{
+      display:flex;
+      transition:transform 0.45s ease;
+    }
+    .pillar-slide{
+      min-width:100%;
+      flex-shrink:0;
+      padding-right:4px;
+      box-sizing:border-box;
+    }
+    .pillar-slide .card{
+      height:100%;
+    }
+    .slider-dots{
+      display:flex;
+      justify-content:center;
+      gap:6px;
+      margin-top:10px;
+    }
+    .slider-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:#d1d5db;
+      border:none;
+      padding:0;
+      cursor:pointer;
+    }
+    .slider-dot.active{
+      width:18px;
+      background:var(--primary-soft);
+    }
+
+    /* FOOTER */
+    .footer{
+      background:#0b2b4a;
+      color:#fff;
+      padding:22px 0 18px;
+      margin-top:24px;
+      font-size:12px;
+    }
+    .footer-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:space-between;
+    }
+    .footer a{color:#e5e7eb}
+
+    @media (max-width:800px){
+      .navlinks{display:none;}
+      .hero-grid{flex-direction:column;}
+      .two-col{grid-template-columns:1fr;}
+    }
+
+    @media (min-width:900px){
+      .pillar-slide{padding:0 60px;}
+    }
   </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="container nav">
-    <div class="logo-wrap">
-      <img src="logo%20urp.png" class="logo-img">
-      <div class="brand-title">Uttarakhand Reform Party</div>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo-wrap">
+        <img src="logo%20urp.png" alt="URP logo" class="logo-img">
+        <div class="brand-title">Uttarakhand Reform Party</div>
+      </div>
+      <nav class="navlinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="vision.html">Vision</a>
+        <a href="join.html">Join</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="contact.html">Contact</a>
+        <span class="lang-switch">
+          <a href="index.html" class="lang">EN</a> |
+          <a href="index-hi.html" class="lang active">हिंदी</a>
+        </span>
+      </nav>
     </div>
-    <nav class="navlinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="vision.html">Vision</a>
-      <a href="join.html">Join</a>
-      <a href="candidates.html">Candidates</a>
-      <a href="contact.html">Contact</a>
-      <span class="lang-switch">
-        <a href="index.html" class="lang">EN</a> |
-        <a href="index-hi.html" class="lang active">HI</a>
-      </span>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="hero">
-  <div class="container">
-    <h1 class="hero-title">पहाड़ के लिए जवाबदेह राजनीति</h1>
-    <p class="hero-sub">
-      URP उत्तराखंड के नागरिकों के लिए एक सुधारवादी मंच है जो पारदर्शी शासन, स्थानीय विकास और युवा नेतृत्व को बढ़ावा देता है।
-    </p>
-  </div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <div class="hero-kicker">UTTARAKHAND REFORM PARTY • URP</div>
+          <h1 class="hero-title">पहाड़ के लिए जवाबदेह राजनीति</h1>
+          <p class="hero-sub">
+            URP एक सुधार-केंद्रित राजनीतिक मंच है जो पारदर्शी शासन, पहाड़-प्रथम विकास
+            और युवा-नेतृत्व वाली राजनीति के ज़रिए आम नागरिकों के जीवन में मापने योग्य बदलाव
+            लाने पर केंद्रित है।
+          </p>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>URP के 6 मुख्य स्तंभ</h2>
-    </div>
+          <div class="badge-row">
+            <div class="badge">पहाड़-प्रथम विकास</div>
+            <div class="badge">पारदर्शी शासन</div>
+            <div class="badge">युवा व महिला नेतृत्व</div>
+          </div>
 
-    <div class="pillars-slider">
-      <div class="pillars-track" id="pillarsTrack">
-        <div class="pillar-slide"><div class="card"><h3>1. पारदर्शी शासन</h3><p>सरकारी खर्च और योजनाएँ जनता के सामने स्पष्ट रूप से रखी जाएँ।</p></div></div>
-        <div class="pillar-slide"><div class="card"><h3>2. पहाड़-केंद्रित विकास</h3><p>पहाड़ी क्षेत्रों के लिए विशेष योजनाएँ और प्राथमिकताएँ।</p></div></div>
-        <div class="pillar-slide"><div class="card"><h3>3. युवा सशक्तिकरण</h3><p>स्थानीय रोजगार और स्किल विकास पर फोकस।</p></div></div>
-        <div class="pillar-slide"><div class="card"><h3>4. महिला सुरक्षा</h3><p>महिलाओं के लिए सुरक्षित वातावरण और सुविधाएँ।</p></div></div>
-        <div class="pillar-slide"><div class="card"><h3>5. ग्रामीण आजीविका</h3><p>गाँवों में रोजगार के स्थायी अवसर।</p></div></div>
-        <div class="pillar-slide"><div class="card"><h3>6. स्वच्छ राजनीति</h3><p>ईमानदार, जिम्मेदार और जवाबदेह नेतृत्व।</p></div></div>
+          <div class="cta-row">
+            <a href="join.html" class="btn-primary">URP से जुड़ें</a>
+            <a href="vision.html" class="btn-ghost">हमारा विज़न पढ़ें</a>
+          </div>
+
+          <div class="hero-meta">
+            <div><strong>जन-केंद्रित</strong> दृष्टिकोण — गाँवों, कस्बों और शहरों तक</div>
+            <div><strong>सार्वजनिक रिपोर्टिंग</strong> और पारदर्शी निर्णय-प्रक्रिया</div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-card">
+            <h3>प्रारम्भिक सुधार प्राथमिकताएँ</h3>
+            <p>
+              URP की प्राथमिकता मूल सेवाओं पर है — सड़क, पानी, स्वास्थ्य, स्कूल और स्थानीय रोज़गार,
+              जिनकी स्पष्ट समय-सीमा हो और प्रगति जनता के सामने रखी जाए।
+            </p>
+            <div class="hero-kpi">
+              <div class="hero-kpi-item">
+                <span>स्थानीय</span>
+                मुद्दों की मैपिंग ज़मीनी फीडबैक के साथ
+              </div>
+              <div class="hero-kpi-item">
+                <span>खुला</span>
+                काम की रिपोर्टें नागरिकों के साथ साझा
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 PILLARS (SLIDER) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>URP के छह मुख्य स्तंभ</h2>
+          <p>
+            URP चाहता है कि नागरिक हमें सिर्फ़ नारों से नहीं, बल्कि साफ़ स्तंभों से परखें।
+            यही छह स्तंभ हमारी प्राथमिकताओं, नीतियों और उम्मीदवारों का आधार हैं।
+          </p>
+        </div>
+
+        <div class="pillars-slider">
+          <div class="pillars-track" id="pillarsTrack">
+            <!-- 1 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>1. पारदर्शी शासन</h3>
+                <p>
+                  सार्वजनिक धन का हर रुपये तक हिसाब होना चाहिए। परियोजनाओं की लागत, समय-सीमा और प्रगति
+                  सरल ऑनलाइन डैशबोर्ड और समय-समय पर रिपोर्ट के ज़रिए जनता को दिखे।
+                </p>
+                <div class="tag-row">
+                  <div class="tag">सार्वजनिक डैशबोर्ड</div>
+                  <div class="tag">जन-सक्रिय निगरानी</div>
+                </div>
+              </article>
+            </div>
+            <!-- 2 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>2. पहाड़-प्रथम योजना</h3>
+                <p>
+                  पहाड़ी क्षेत्रों की ज़रूरतें मैदानों से अलग हैं। URP पहाड़ी ब्लॉकों और दुर्गम क्षेत्रों
+                  के लिए अलग योजना, बजट और क्रियान्वयन पर ज़ोर देता है।
+                </p>
+                <div class="tag-row">
+                  <div class="tag">पलायन-रोधी फोकस</div>
+                  <div class="tag">गाँव-क्लस्टर मॉडल</div>
+                </div>
+              </article>
+            </div>
+            <!-- 3 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>3. युवा सशक्तिकरण</h3>
+                <p>
+                  युवाओं को हर अवसर के लिए राज्य छोड़कर न जाना पड़े। कौशल विकास, उद्यमिता और
+                  स्थानीय रोज़गार हमारी नीति के केंद्र में हैं।
+                </p>
+                <div class="tag-row">
+                  <div class="tag">स्किल व जॉब्स</div>
+                  <div class="tag">स्थानीय उद्यम</div>
+                </div>
+              </article>
+            </div>
+            <!-- 4 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>4. महिला सुरक्षा व सम्मान</h3>
+                <p>
+                  बाज़ार, स्कूल, कार्यस्थल और सार्वजनिक परिवहन — हर जगह महिलाओं के लिए सुरक्षित
+                  और सहयोगी माहौल, बेहतर ढाँचा और संवेदनशील व्यवस्था हो।
+                </p>
+                <div class="tag-row">
+                  <div class="tag">सुरक्षित सार्वजनिक स्थान</div>
+                  <div class="tag">सहयोगी सिस्टम</div>
+                </div>
+              </article>
+            </div>
+            <!-- 5 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>5. ग्रामीण आजीविका</h3>
+                <p>
+                  पर्यटन, बागवानी, जंगल और स्थानीय सेवाएँ गाँवों में सम्मानजनक रोज़गार बना सकती हैं,
+                  ताकि पलायन मजबूरी नहीं, विकल्प बन जाए।
+                </p>
+                <div class="tag-row">
+                  <div class="tag">गाँव अर्थव्यवस्था</div>
+                  <div class="tag">स्थानीय वैल्यू-चेन</div>
+                </div>
+              </article>
+            </div>
+            <!-- 6 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>6. स्वच्छ और जवाबदेह राजनीति</h3>
+                <p>
+                  उम्मीदवारों और पदधारकों को ईमानदारी, सार्वजनिक आचरण और जवाबदेही के बुनियादी मानकों
+                  पर खरा उतरना चाहिए — गंभीर आपराधिक पृष्ठभूमि के लिए जगह नहीं।
+                </p>
+                <div class="tag-row">
+                  <div class="tag">ईमानदारी</div>
+                  <div class="tag">सार्वजनिक जवाबदेही</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="slider-dots" id="pillarsDots"></div>
+      </div>
+    </section>
+
+    <!-- WHY NEW OPTION / HOW WE WORK -->
+    <section class="section">
+      <div class="container two-col">
+        <div>
+          <div class="section-header">
+            <h2>उत्तराखंड को नए विकल्प की ज़रूरत क्यों?</h2>
+          </div>
+          <p class="small" style="margin-bottom:10px;">
+            ज़्यादातर परिवारों के लिए बड़े मुद्दे वही हैं — पलायन, बेरोज़गारी, बुनियादी सेवाएँ,
+            स्वास्थ्य, स्कूल और नाज़ुक पर्यावरण। URP मानता है कि नागरिकों को शांत, ईमानदार और
+            जवाबदेह राजनीतिक विकल्प मिलना चाहिए।
+          </p>
+          <ul class="timeline">
+            <li>हर रोज़ के मुद्दों पर फोकस, केवल सुर्खियों वाली राजनीति नहीं।</li>
+            <li>पहाड़ और मैदानी क्षेत्रों की अलग पहचान और आकांक्षाओं का सम्मान।</li>
+            <li>निर्णय-प्रक्रिया में युवाओं, महिलाओं और पेशेवरों के लिए अधिक स्थान।</li>
+          </ul>
+        </div>
+        <div>
+          <div class="section-header">
+            <h2>URP कैसे काम करना चाहता है?</h2>
+          </div>
+          <div class="stats-row">
+            <div class="stat">
+              <span>दृष्टिकोण</span>
+              <strong>जन-केंद्रित</strong>
+            </div>
+            <div class="stat">
+              <span>शैली</span>
+              <strong>शांत व तथ्य-आधारित</strong>
+            </div>
+            <div class="stat">
+              <span>प्रतिबद्धता</span>
+              <strong>ईमानदार रिपोर्ट</strong>
+            </div>
+          </div>
+          <ul class="timeline" style="margin-top:10px;">
+            <li>नीतियाँ बनाने से पहले नागरिकों और स्वयंसेवकों की बात सुनना।</li>
+            <li>फ़ैसलों को ज़मीनी डेटा, सर्वे और स्थानीय अनुभव पर आधारित रखना।</li>
+            <li>काम की रिपोर्ट सरल भाषा में साझा करना, ताकि लोग सवाल पूछ सकें।</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO JOIN -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>आप URP से कैसे जुड़ सकते हैं?</h2>
+          <p>
+            URP से जुड़ने की प्रक्रिया सरल और पारदर्शी डिजिटल प्रक्रिया है। आप समर्थक, स्वयंसेवक
+            या स्थानीय आयोजक के रूप में शुरुआत कर सकते हैं और समय के साथ अपनी भूमिका बढ़ा सकते हैं।
+          </p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h4>1. ऑनलाइन सदस्यता फ़ॉर्म भरें</h4>
+            <p>
+              Join पेज पर जाएँ और Google फ़ॉर्म में अपनी बुनियादी जानकारी भरें
+              (नाम, मोबाइल, मतदाता विवरण, ज़िला और क्षेत्र आदि)।
+            </p>
+          </div>
+          <div class="card">
+            <h4>2. समन्वय टीम से जुड़ें</h4>
+            <p>
+              एक समन्वयक आपसे कॉल या WhatsApp के ज़रिए जुड़ेगा ताकि आपके पृष्ठभूमि,
+              समय-उपलब्धता और रुचि क्षेत्रों को समझ सके।
+            </p>
+          </div>
+          <div class="card">
+            <h4>3. स्थानीय टीम का हिस्सा बनें</h4>
+            <p>
+              आप गाँव, वार्ड या बूथ-स्तर की टीमों से जुड़ सकते हैं, या संचार,
+              रिसर्च, कार्यक्रम आदि में सहयोग कर सकते हैं।
+            </p>
+          </div>
+          <div class="card">
+            <h4>4. ज़िम्मेदारी बढ़ाएँ</h4>
+            <p>
+              जैसे-जैसे आपका योगदान नियमित होता है, आपको स्थानीय, ज़िला या राज्य स्तर
+              की संरचना में अधिक ज़िम्मेदार भूमिकाओं के लिए विचार किया जा सकता है।
+            </p>
+          </div>
+        </div>
+        <p class="small" style="margin-top:10px;">
+          रचनात्मक राजनीति में भाग लेने के लिए तैयार हैं?  
+          <a href="join.html" style="color:var(--primary-soft);font-weight:600;">Join पेज</a>
+          पर जाएँ और फ़ॉर्म भरें।
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div>© 2025 Uttarakhand Reform Party</div>
+        <div class="small">उत्तराखंड के लिए सुधार-केंद्रित राजनीतिक मंच।</div>
+      </div>
+      <div class="small">
+        <div>Contact: contact@uttarakhandreform.org</div>
+        <div>Phone: +91 98765 43210</div>
+      </div>
+      <div class="small">
+        <div><a href="join.html">स्वयंसेवक / सदस्य बनें</a></div>
+        <div><a href="candidates.html">उम्मीदवार के रूप में रुचि दर्ज करें</a></div>
       </div>
     </div>
-    <div class="slider-dots" id="pillarsDots"></div>
-  </div>
-</section>
-</main>
+  </footer>
 
-<script>
-(function(){
-  var track=document.getElementById('pillarsTrack');
-  var dots=document.getElementById('pillarsDots');
-  var slides=track.children;
-  var index=0;
+  <!-- SLIDER SCRIPT -->
+  <script>
+    (function(){
+      var track = document.getElementById('pillarsTrack');
+      var dotsWrap = document.getElementById('pillarsDots');
+      if(!track || !dotsWrap) return;
 
-  for(let i=0;i<slides.length;i++){
-    let b=document.createElement('button');
-    b.className='slider-dot'+(i==0?' active':'');
-    b.onclick=()=>show(i);
-    dots.appendChild(b);
-  }
+      var slides = Array.prototype.slice.call(track.querySelectorAll('.pillar-slide'));
+      if(!slides.length) return;
 
-  function show(i){
-    index=i;
-    track.style.transform='translateX('+(-100*i)+'%)';
-    dots.childNodes.forEach((d,j)=>d.classList.toggle('active',j===i));
-  }
+      var current = 0;
+      var total = slides.length;
+      var autoTimer = null;
 
-  setInterval(()=>{index=(index+1)%slides.length;show(index);},5000);
-})();
-</script>
+      // Create dots
+      slides.forEach(function(_, idx){
+        var btn = document.createElement('button');
+        btn.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+        btn.setAttribute('type','button');
+        btn.addEventListener('click', function(){
+          goTo(idx);
+          resetAuto();
+        });
+        dotsWrap.appendChild(btn);
+      });
+
+      var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.slider-dot'));
+
+      function goTo(index){
+        if(index < 0) index = total - 1;
+        if(index >= total) index = 0;
+        current = index;
+        track.style.transform = 'translateX(' + (-100 * current) + '%)';
+        dots.forEach(function(d,i){
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function next(){
+        goTo(current + 1);
+      }
+
+      function resetAuto(){
+        if(autoTimer) clearInterval(autoTimer);
+        autoTimer = setInterval(next, 6000);
+      }
+
+      resetAuto();
+    })();
+  </script>
 
 </body>
 </html>
