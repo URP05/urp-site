@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <title>URP के बारे में — Uttarakhand Reform Party</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Uttarakhand Reform Party (URP) के बारे में — उत्तराखंड में पारदर्शी शासन और संतुलित विकास के लिए काम करने वाला सुधार-केंद्रित राजनीतिक मंच।">
+
+  <style>
+    :root{
+      --primary:#0a3d62;
+      --primary-soft:#174c91;
+      --accent:#f39c12;
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111827;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .lang-switch{
+      margin-left:15px;
+      font-weight:600;
+    }
+    .lang-switch .lang{
+      color:#ffffff;
+      font-size:13px;
+      opacity:0.9;
+    }
+    .lang-switch .lang.active{
+      color:#f39c12;
+      border-bottom:1px solid #f39c12;
+    }
+
+    /* HEADER */
+    .header{
+      background:linear-gradient(90deg,var(--primary),#3b6df3);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 4px 14px rgba(15,35,75,0.35);
+    }
+    .container{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-img{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      object-fit:cover;
+      background:#ffffff;
+      box-shadow:0 0 0 2px rgba(255,255,255,0.7);
+    }
+    .brand-title{
+      font-weight:800;
+      letter-spacing:.03em;
+      font-size:15px;
+    }
+    .navlinks{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+      font-weight:500;
+    }
+    .navlinks a{
+      color:rgba(255,255,255,0.94);
+      padding:4px 0;
+    }
+    .navlinks a.active{
+      border-bottom:2px solid var(--accent);
+    }
+
+    /* HERO */
+    .hero{
+      padding:48px 0 28px;
+      background:
+        radial-gradient(circle at top left,#e1ecff,transparent 55%),
+        radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
+    }
+    .hero-kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .hero-title{
+      font-size:30px;
+      line-height:1.3;
+      color:#0b2b4a;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+    .hero-sub{
+      font-size:15px;
+      color:#1f2933;
+      max-width:760px;
+    }
+
+    .section{
+      padding:32px 0;
+    }
+    .section-header{
+      margin-bottom:16px;
+    }
+    .section-header h2{
+      font-size:22px;
+      color:#111827;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:20px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:16px 16px 18px;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+    .card h3, .card h4{
+      font-size:17px;
+      margin-bottom:6px;
+      color:#0b2b4a;
+    }
+    .card p{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline{
+      list-style:none;
+      padding-left:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline li{
+      margin-bottom:8px;
+      padding-left:18px;
+      position:relative;
+    }
+    .timeline li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--accent);
+      font-size:18px;
+      line-height:1;
+    }
+
+    .footer{
+      background:#0b2b4a;
+      color:#fff;
+      padding:22px 0 18px;
+      margin-top:24px;
+      font-size:12px;
+    }
+    .footer-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:space-between;
+    }
+    .footer a{color:#e5e7eb}
+
+    @media (max-width:800px){
+      .navlinks{display:none;}
+      .two-col{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo-wrap">
+      <img src="logo%20urp.png" alt="URP logo" class="logo-img">
+      <div class="brand-title">Uttarakhand Reform Party</div>
+    </div>
+    <nav class="navlinks">
+      <!-- yahan Home ko Hindi version pe point kara sakte हैं अगर चाहें तो -->
+      <a href="index-hi.html">Home</a>
+      <a href="about-hi.html" class="active">About</a>
+      <a href="vision.html">Vision</a>
+      <a href="join.html">Join</a>
+      <a href="candidates.html">Candidates</a>
+      <a href="contact.html">Contact</a>
+      <span class="lang-switch">
+        <a href="about.html" class="lang">EN</a> |
+        <a href="about-hi.html" class="lang active">हिंदी</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-kicker">ABOUT URP</div>
+    <h1 class="hero-title">हम कौन हैं</h1>
+    <p class="hero-sub">
+      Uttarakhand Reform Party (URP) नागरिकों द्वारा संचालित राजनीतिक मंच है, जो शासन को मज़बूत करने,
+      सार्वजनिक जवाबदेही बढ़ाने और पूरे उत्तराखंड में संतुलित विकास बनाने पर केंद्रित है।  
+      हमारा दृष्टिकोण व्यावहारिकता, पारदर्शिता और दीर्घकालिक संरचनात्मक सुधार पर आधारित है।
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+
+    <div>
+      <div class="section-header">
+        <h2>हमारी पृष्ठभूमि</h2>
+      </div>
+      <p class="card" style="font-size:13px;color:var(--muted);">
+        URP की शुरुआत नागरिकों, पेशेवरों, सामाजिक कार्यकर्ताओं और सामुदायिक नेतृत्व से लगातार संवाद के बाद हुई,
+        जिनकी एक समान चिंता थी — शासन की गुणवत्ता और सेवा-प्रदान में दिखने वाला सुधार।  
+        यह पार्टी व्यक्तिनिष्ठ राजनीति के बजाय सुनियोजित योजना, स्थानीय भागीदारी और मापने योग्य विकास परिणामों
+        पर ज़ोर देती है।
+      </p>
+      <ul class="timeline" style="margin-top:12px;">
+        <li>समुदाय-केंद्रित राजनीतिक गठन।</li>
+        <li>जवाबदेही और संस्थागत सुधार पर फोकस।</li>
+        <li>उत्तराखंड के विविध क्षेत्रों से समावेशी प्रतिनिधित्व।</li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="card">
+        <h3>हमारा मूल दर्शन</h3>
+        <p>
+          URP मानता है कि राजनीतिक नेतृत्व को नैतिक शासन, सामाजिक ज़िम्मेदारी और
+          टिकाऊ विकास मॉडल के मार्गदर्शन में काम करना चाहिए, जो शहरी और ग्रामीण दोनों समुदायों को
+          मज़बूत करें।
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h4>हमारी प्रतिबद्धता</h4>
+        <p>
+          हम ऐसा पारदर्शी राजनीतिक वातावरण बनाने के लिए प्रतिबद्ध हैं जो सार्वजनिक विश्वास का सम्मान करे,
+          नागरिक भागीदारी को प्रोत्साहित करे और व्यावहारिक समाधान-उन्मुख राजनीति पर ज़ोर दे।
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+
+    <div>
+      <div class="section-header">
+        <h2>मुख्य मूल्य</h2>
+      </div>
+      <div class="card">
+        <ul class="timeline">
+          <li>निर्णय-प्रक्रिया में ईमानदारी और पारदर्शिता।</li>
+          <li>सभी क्षेत्रों और समुदायों के प्रति समान सम्मान।</li>
+          <li>नेतृत्व में युवाओं और महिलाओं की सक्रिय भागीदारी।</li>
+          <li>प्रमाण-आधारित शासन और नीति-निर्माण।</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-header">
+        <h2>संगठनात्मक संस्कृति</h2>
+      </div>
+      <div class="card">
+        <ul class="timeline">
+          <li>समावेशी आंतरिक संरचना और खुला संवाद।</li>
+          <li>ज़मीनी भागीदारी और विकेन्द्रित नेतृत्व।</li>
+          <li>कामकाज और संचार में पारदर्शिता।</li>
+          <li>लगातार सीखने और जवाबदेही की व्यवस्था।</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div>© 2025 Uttarakhand Reform Party</div>
+      <div class="small">उत्तराखंड के लिए सुधार-केंद्रित राजनीतिक मंच।</div>
+    </div>
+    <div class="small">
+      <div>Contact: contact@uttarakhandreform.org</div>
+      <div>Phone: +91 98765 43210</div>
+    </div>
+    <div class="small">
+      <div><a href="join.html">स्वयंसेवक / सदस्य बनें</a></div>
+      <div><a href="candidates.html">उम्मीदवार के रूप में आवेदन करें</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
