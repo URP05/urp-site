@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <title>जुड़ें — Uttarakhand Reform Party</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="उत्तराखंड रिफॉर्म पार्टी (URP) से सदस्य, स्वयंसेवक या स्थानीय आयोजक के रूप में जुड़ें। सरल, डिजिटल और पारदर्शी प्रक्रिया।">
+
+  <style>
+    :root{
+      --primary:#0a3d62;
+      --primary-soft:#174c91;
+      --accent:#f39c12;
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111827;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .lang-switch{
+      margin-left:15px;
+      font-weight:600;
+    }
+    .lang-switch .lang{
+      color:#ffffff;
+      font-size:13px;
+      opacity:0.9;
+    }
+    .lang-switch .lang.active{
+      color:#f39c12;
+      border-bottom:1px solid #f39c12;
+    }
+
+    .header{
+      background:linear-gradient(90deg,var(--primary),#3b6df3);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 4px 14px rgba(15,35,75,0.35);
+    }
+    .container{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-img{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      object-fit:cover;
+      background:#fff;
+      box-shadow:0 0 0 2px rgba(255,255,255,0.7);
+    }
+    .brand-title{
+      font-weight:800;
+      letter-spacing:.03em;
+      font-size:15px;
+    }
+    .navlinks{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+      font-weight:500;
+    }
+    .navlinks a{
+      color:rgba(255,255,255,0.94);
+      padding:4px 0;
+    }
+    .navlinks a.active{
+      border-bottom:2px solid var(--accent);
+    }
+
+    .hero{
+      padding:46px 0 24px;
+      background:
+        radial-gradient(circle at top left,#e1ecff,transparent 55%),
+        radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
+    }
+    .hero-title{
+      font-size:30px;
+      line-height:1.3;
+      color:#0b2b4a;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .hero-sub{
+      font-size:15px;
+      color:#1f2933;
+      max-width:720px;
+    }
+    .hero-kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+
+    .section{
+      padding:30px 0;
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+      gap:20px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:16px 16px 18px;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+    .card h3, .card h4{
+      font-size:17px;
+      margin-bottom:6px;
+      color:#0b2b4a;
+    }
+    .card p{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline{
+      list-style:none;
+      padding-left:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline li{
+      margin-bottom:8px;
+      padding-left:18px;
+      position:relative;
+    }
+    .timeline li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--accent);
+      font-size:18px;
+      line-height:1;
+    }
+    .badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:8px;
+    }
+    .badge{
+      font-size:11px;
+      border-radius:999px;
+      padding:4px 10px;
+      background:#eef2ff;
+      color:#3730a3;
+    }
+    .small{font-size:12px;color:var(--muted);}
+
+    iframe{
+      width:100%;
+      border:none;
+      border-radius:14px;
+      background:#fff;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+
+    .footer{
+      background:#0b2b4a;
+      color:#fff;
+      padding:22px 0 18px;
+      margin-top:24px;
+      font-size:12px;
+    }
+    .footer-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:space-between;
+    }
+    .footer a{color:#e5e7eb}
+
+    @media (max-width:900px){
+      .navlinks{display:none;}
+      .two-col{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo-wrap">
+      <img src="logo%20urp.png" alt="URP logo" class="logo-img">
+      <div class="brand-title">Uttarakhand Reform Party</div>
+    </div>
+    <nav class="navlinks">
+      <a href="index-hi.html">Home</a>
+      <a href="about-hi.html">About</a>
+      <a href="vision-hi.html">Vision</a>
+      <a href="join-hi.html" class="active">Join</a>
+      <a href="candidates-hi.html">Candidates</a>
+      <a href="contact-hi.html">Contact</a>
+      <span class="lang-switch">
+        <a href="join.html" class="lang">EN</a> |
+        <a href="join-hi.html" class="lang active">हिंदी</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-kicker">JOIN • सदस्यता और स्वयंसेवक</div>
+    <h1 class="hero-title">URP से जुड़ें — सकारात्मक राजनीति का हिस्सा बनें</h1>
+    <p class="hero-sub">
+      उत्तराखंड रिफॉर्म पार्टी की सदस्यता प्रक्रिया सरल, डिजिटल और पारदर्शी है।
+      यहाँ कोई गुप्त समूह या छिपे फॉर्म नहीं हैं — जागरूक नागरिक, पूर्व सैनिक, युवा, महिलाएँ और पेशेवर सभी का स्वागत है।
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+
+    <div>
+      <div class="card">
+        <h3>सदस्य बनने के 4 आसान चरण</h3>
+        <ul class="timeline">
+          <li><strong>ऑनलाइन फॉर्म भरें:</strong> नीचे दिए गए Google Form में अपना नाम, मोबाइल नंबर, EPIC, ज़िला और विधानसभा विवरण भरें।</li>
+          <li><strong>सत्यापन:</strong> जिला / विधानसभा समन्वयक 7–10 दिनों में कॉल या WhatsApp के माध्यम से संपर्क करेगा।</li>
+          <li><strong>अपनी भूमिका तय करें:</strong> आप स्वयंसेवक, बूथ/वार्ड स्तर या डिजिटल टीम में कैसे योगदान देना चाहते हैं, यह तय होगा।</li>
+          <li><strong>आधिकारिक टीम में शामिल:</strong> आपको URP के आधिकारिक WhatsApp / Email समूहों में जोड़ा जाएगा और बैठकों की जानकारी दी जाएगी।</li>
+        </ul>
+        <div class="badge-row">
+          <div class="badge">फिलहाल कोई सदस्यता शुल्क नहीं</div>
+          <div class="badge">डिजिटल रिकॉर्ड और पहचान</div>
+          <div class="badge">विधानसभा-स्तरीय स्वयंसेवक नेटवर्क</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:14px;">
+        <h4>कौन जुड़ सकता है?</h4>
+        <ul class="timeline">
+          <li>18 वर्ष या उससे अधिक आयु का कोई भी व्यक्ति जिसका उत्तराखंड से संबंध हो।</li>
+          <li>सभी समुदायों, धर्मों, क्षेत्रों और भाषाओं के लोग — बिना किसी भेदभाव के।</li>
+          <li>गंभीर आपराधिक मामलों में दोषी न ठहराया गया हो।</li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <p class="small" style="margin-bottom:8px;">
+        नीचे दिया गया फॉर्म सीधे Google Forms से जुड़ा है — आपकी जानकारी सुरक्षित Google Sheet में संग्रहीत होती है।
+      </p>
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?embedded=true"
+        height="950"
+        loading="lazy">
+      </iframe>
+      <p class="small" style="margin-top:6px;">
+        यदि फॉर्म दिखाई न दे तो 
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIXaDJojCZDJYDThfXSX-bIx3CozwdTyEp2hXWzdptEozBZg/viewform?usp=sf_link" 
+           target="_blank" 
+           style="color:var(--primary-soft);font-weight:600;">
+          यहाँ क्लिक करें
+        </a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div>© 2025 Uttarakhand Reform Party</div>
+      <div class="small">उत्तराखंड के लिए सुधार-केंद्रित राजनीतिक मंच</div>
+    </div>
+    <div class="small">
+      <div>Contact: contact@uttarakhandreform.org</div>
+      <div>Phone: +91 98765 43210</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
