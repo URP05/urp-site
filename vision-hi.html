@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <title>विजन — Uttarakhand Reform Party</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="URP का विज़न पारदर्शी शासन, स्थानीय रोज़गार, महिला सुरक्षा, बेहतर स्वास्थ्य और शिक्षा, पलायन रोकने और पर्यावरण संरक्षण पर केंद्रित है।">
+
+  <style>
+    :root{
+      --primary:#0a3d62;
+      --primary-soft:#174c91;
+      --accent:#f39c12;
+      --bg:#f5f7fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:#111827;
+    }
+    a{text-decoration:none;color:inherit}
+
+    .lang-switch{
+      margin-left:15px;
+      font-weight:600;
+    }
+    .lang-switch .lang{
+      color:#ffffff;
+      font-size:13px;
+      opacity:0.9;
+    }
+    .lang-switch .lang.active{
+      color:#f39c12;
+      border-bottom:1px solid #f39c12;
+    }
+
+    /* HEADER */
+    .header{
+      background:linear-gradient(90deg,var(--primary),#3b6df3);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:10;
+      box-shadow:0 4px 14px rgba(15,35,75,0.35);
+    }
+    .container{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 0;
+    }
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .logo-img{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      object-fit:cover;
+      background:#fff;
+      box-shadow:0 0 0 2px rgba(255,255,255,0.7);
+    }
+    .brand-title{
+      font-weight:800;
+      letter-spacing:.03em;
+      font-size:15px;
+    }
+    .navlinks{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+      font-weight:500;
+    }
+    .navlinks a{
+      color:rgba(255,255,255,0.94);
+      padding:4px 0;
+    }
+    .navlinks a.active{
+      border-bottom:2px solid var(--accent);
+    }
+
+    /* HERO */
+    .hero{
+      padding:46px 0 26px;
+      background:
+        radial-gradient(circle at top left,#e1ecff,transparent 55%),
+        radial-gradient(circle at bottom right,#ffe7c7,transparent 55%);
+    }
+    .hero-kicker{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      color:var(--muted);
+      margin-bottom:6px;
+    }
+    .hero-title{
+      font-size:30px;
+      line-height:1.3;
+      color:#0b2b4a;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .hero-sub{
+      font-size:15px;
+      color:#1f2933;
+      max-width:720px;
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:30px 0;
+    }
+    .section-header{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:16px;
+    }
+    .section-header h2{
+      font-size:22px;
+      color:#111827;
+    }
+    .section-header p{
+      font-size:13px;
+      color:var(--muted);
+      max-width:420px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:14px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:16px 16px 18px;
+      box-shadow:0 10px 26px rgba(15,23,42,0.06);
+    }
+    .card h3, .card h4{
+      font-size:17px;
+      margin-bottom:6px;
+      color:#0b2b4a;
+    }
+    .card p{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline{
+      list-style:none;
+      padding-left:0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .timeline li{
+      margin-bottom:8px;
+      padding-left:18px;
+      position:relative;
+    }
+    .timeline li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--accent);
+      font-size:18px;
+      line-height:1;
+    }
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-top:6px;
+    }
+    .tag{
+      font-size:11px;
+      border-radius:999px;
+      padding:3px 8px;
+      background:#eef2ff;
+      color:#3730a3;
+    }
+    .small{font-size:12px;color:var(--muted);}
+
+    /* 6-PILLAR SLIDER */
+    .pillars-slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:16px;
+    }
+    .pillars-track{
+      display:flex;
+      transition:transform 0.45s ease;
+    }
+    .pillar-slide{
+      min-width:100%;
+      flex-shrink:0;
+      padding-right:4px;
+      box-sizing:border-box;
+    }
+    .pillar-slide .card{
+      height:100%;
+    }
+    .slider-dots{
+      display:flex;
+      justify-content:center;
+      gap:6px;
+      margin-top:10px;
+    }
+    .slider-dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:#d1d5db;
+      border:none;
+      padding:0;
+      cursor:pointer;
+    }
+    .slider-dot.active{
+      width:18px;
+      background:var(--primary-soft);
+    }
+
+    /* FOOTER */
+    .footer{
+      background:#0b2b4a;
+      color:#fff;
+      padding:22px 0 18px;
+      margin-top:24px;
+      font-size:12px;
+    }
+    .footer-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      justify-content:space-between;
+    }
+    .footer a{color:#e5e7eb}
+
+    @media (max-width:800px){
+      .navlinks{display:none;}
+    }
+    @media (min-width:900px){
+      .pillar-slide{padding:0 60px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo-wrap">
+        <img src="logo%20urp.png" alt="URP logo" class="logo-img">
+        <div class="brand-title">Uttarakhand Reform Party</div>
+      </div>
+      <nav class="navlinks">
+        <a href="index-hi.html">Home</a>
+        <a href="about-hi.html">About</a>
+        <a href="vision-hi.html" class="active">Vision</a>
+        <a href="join.html">Join</a>
+        <a href="candidates.html">Candidates</a>
+        <a href="contact.html">Contact</a>
+        <span class="lang-switch">
+          <a href="vision.html" class="lang">EN</a> |
+          <a href="vision-hi.html" class="lang active">हिंदी</a>
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-kicker">VISION • संक्षिप्त दस्तावेज़</div>
+        <h1 class="hero-title">URP का विज़न — सुरक्षित, सक्षम और सम्मानित उत्तराखंड</h1>
+        <p class="hero-sub">
+          हमारा लक्ष्य सिर्फ़ सरकार बदलना नहीं, बल्कि शासन की गुणवत्ता बदलना है।  
+          सीधी बात — <strong>“काम दिखे, आँकड़े साफ़ हों और फ़ैसला जनता करे।”</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- 6-PILLAR SLIDER -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>6 आधार स्तंभ (संक्षिप्त विज़न)</h2>
+          <p>
+            यह एक संक्षिप्त ढाँचा है। विस्तृत घोषणा-पत्र हर सीट पर सर्वे और नागरिकों से बात करके तैयार किया जाएगा।
+          </p>
+        </div>
+
+        <div class="pillars-slider">
+          <div class="pillars-track" id="visionTrack">
+            <!-- 1 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>1. शासन और पारदर्शिता</h3>
+                <p>
+                  “फ़ाइल से बाहर, जनता की नज़र में” — हर बड़ी योजना, खर्च और समय-सीमा कागज़ों में छिपी नहीं,
+                  लोगों के सामने साफ़ दिखनी चाहिए।
+                </p>
+                <ul class="timeline">
+                  <li>ज़िला-वार सार्वजनिक पोर्टल — योजना का नाम, बजट, ठेकेदार, स्थिति, फ़ोटो और लोकेशन की जानकारी।</li>
+                  <li>हर तीन महीने में सार्वजनिक रिपोर्ट — सिर्फ़ भाषण नहीं, ठोस आँकड़े और प्रगति की जानकारी।</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Public dashboards</div>
+                  <div class="tag">Citizen monitoring</div>
+                </div>
+              </article>
+            </div>
+            <!-- 2 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>2. रोज़गार और युवा सशक्तिकरण</h3>
+                <p>
+                  “अपने ज़िले से ही कमाई” — हर नौकरी के लिए राज्य से बाहर भागना युवाओं की मजबूरी न रहे।
+                </p>
+                <ul class="timeline">
+                  <li>हर ज़िले में Multi-skill hubs — IT, tourism, logistics, agro-processing और digital services पर जोर।</li>
+                  <li>Local job-mapping portal — कौन-सी कंपनी कहाँ भर्ती कर रही है, यह स्पष्ट और आसान रूप में दिखे।</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Skill hubs</div>
+                  <div class="tag">District job portal</div>
+                </div>
+              </article>
+            </div>
+            <!-- 3 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>3. महिला सुरक्षा और अवसर</h3>
+                <p>
+                  सड़क, बाज़ार, स्कूल और कार्यस्थल — रोज़मर्रा की ज़िंदगी में महिलाओं के लिए सुरक्षित और सम्मानजनक माहौल।
+                </p>
+                <ul class="timeline">
+                  <li>महत्वपूर्ण क्षेत्रों में बेहतर रोशनी, CCTV, महिला हेल्प-डेस्क और तेज़ प्रतिक्रिया दल, खासकर शहरी इलाकों में।</li>
+                  <li>महिला स्वयं सहायता समूहों को पर्यटन, भोजन, हस्तशिल्प और सेवाओं से जुड़ी स्थायी आय-श्रृंखलाओं से जोड़ना।</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Safe cities</div>
+                  <div class="tag">Women SHG economy</div>
+                </div>
+              </article>
+            </div>
+            <!-- 4 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>4. स्वास्थ्य और शिक्षा में रीसेट</h3>
+                <p>
+                  अस्पताल और स्कूल सिर्फ़ इमारत और फोटो-op से नहीं, बल्कि परिणामों और गुणवत्ता के आधार पर आँके जाएँ।
+                </p>
+                <ul class="timeline">
+                  <li>ज़िला अस्पतालों में 24×7 emergency services, विशेषज्ञ डॉक्टर और पहाड़ी ब्लॉकों के लिए tele-medicine।</li>
+                  <li>Teacher posting audits, डिजिटल कक्षाएँ और कठिन पहाड़ी स्कूलों में स्थानीय भाषा में अतिरिक्त सहायता।</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Health audit</div>
+                  <div class="tag">Teacher mapping</div>
+                </div>
+              </article>
+            </div>
+            <!-- 5 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>5. पलायन पर रोक और गाँवों का पुनर्जीवन</h3>
+                <p>
+                  खाली होते गाँव सिर्फ़ यादों का हिस्सा न रहें — उन्हें नए आर्थिक मॉडलों से दोबारा ज़िंदा करना ज़रूरी है।
+                </p>
+                <ul class="timeline">
+                  <li>“Adopt-a-village” पहल — युवाओं, पूर्व सैनिकों और प्रवासी उत्तराखंडियों को गाँवों के पुनर्जीवन से जोड़ना।</li>
+                  <li>Eco-tourism, homestays, learning centres और पहाड़-आधारित छोटे campus जैसी पहल।</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Check migration</div>
+                  <div class="tag">Village revival</div>
+                </div>
+              </article>
+            </div>
+            <!-- 6 -->
+            <div class="pillar-slide">
+              <article class="card">
+                <h3>6. पर्यावरण संरक्षण और आपदा तैयारी</h3>
+                <p>
+                  उत्तराखंड का भविष्य इसकी नदियों, जंगलों और पहाड़ों पर टिका है। इन्हें नज़रअंदाज़ करके कोई भी विकास टिकाऊ नहीं हो सकता।
+                </p>
+                <ul class="timeline">
+                  <li>झरनों और नदियों का पुनर्जीवन, भूस्खलन-प्रवण क्षेत्रों की मैपिंग और संवेदनशील ज़ोन में रोकथाम के काम।</li>
+                  <li>हर विकासखंड में disaster-ready स्वयंसेवक नेटवर्क और नियमित mock drills व प्रशिक्षण।</li>
+                </ul>
+                <div class="tag-row">
+                  <div class="tag">Environment-sensitive growth</div>
+                  <div class="tag">Prepared response system</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="slider-dots" id="visionDots"></div>
+      </div>
+    </section>
+
+    <!-- FROM VISION TO POLICY -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>विजन से नीति तक — प्रक्रिया कैसी होगी?</h2>
+          <p>
+            यह विज़न ऊपर से थोपा गया कागज़ी दस्तावेज़ नहीं होगा। हर ज़िले और विधानसभा क्षेत्र के लोगों के साथ मिलकर इसे और मज़बूत किया जाएगा।
+          </p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h4>1. विधानसभा-स्तर सर्वे</h4>
+            <p class="small">
+              हर विधानसभा में structured survey — युवाओं, महिलाओं, किसानों, मजदूरों और छोटे व्यापारियों की प्राथमिकताएँ अलग-अलग दर्ज की जाएँगी।
+            </p>
+          </div>
+          <div class="card">
+            <h4>2. पॉलिसी समूह (“Policy Labs”)</h4>
+            <p class="small">
+              स्वयंसेवक और विषय-विशेषज्ञों की छोटी टीमें — स्वास्थ्य, शिक्षा, पर्यटन, पर्यावरण और आजीविका पर व्यवहारिक नीति सुझाव तैयार करेंगी।
+            </p>
+          </div>
+          <div class="card">
+            <h4>3. सार्वजनिक मसौदा और फीडबैक</h4>
+            <p class="small">
+              घोषणा-पत्र का मसौदा खुले रूप में जारी किया जाएगा, ताकि लोग ऑनलाइन और स्थानीय बैठकों के ज़रिए बदलाव सुझा सकें।
+            </p>
+          </div>
+          <div class="card">
+            <h4>4. मापने योग्य लक्ष्य</h4>
+            <p class="small">
+              हर क्षेत्र के लिए 100 दिन, 2 साल और 5 साल के स्पष्ट लक्ष्य तय किए जाएँगे, जिनकी प्रगति पर हर साल सार्वजनिक रिपोर्ट जारी की जाएगी — ताकि लोग खुद जाँच सकें।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div>© 2025 Uttarakhand Reform Party</div>
+        <div class="small">उत्तराखंड के लिए सुधार-केंद्रित राजनीतिक मंच।</div>
+      </div>
+      <div class="small">
+        <div>Contact: contact@uttarakhandreform.org</div>
+        <div>Phone: +91 98765 43210</div>
+      </div>
+      <div class="small">
+        <div><a href="join.html">Volunteer / Join</a></div>
+        <div><a href="candidates.html">Apply as Candidate</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDER SCRIPT -->
+  <script>
+    (function(){
+      var track = document.getElementById('visionTrack');
+      var dotsWrap = document.getElementById('visionDots');
+      if(!track || !dotsWrap) return;
+
+      var slides = Array.prototype.slice.call(track.querySelectorAll('.pillar-slide'));
+      if(!slides.length) return;
+
+      var current = 0;
+      var total = slides.length;
+      var autoTimer = null;
+
+      slides.forEach(function(_, idx){
+        var btn = document.createElement('button');
+        btn.className = 'slider-dot' + (idx === 0 ? ' active' : '');
+        btn.type = 'button';
+        btn.addEventListener('click', function(){
+          goTo(idx);
+          resetAuto();
+        });
+        dotsWrap.appendChild(btn);
+      });
+
+      var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.slider-dot'));
+
+      function goTo(index){
+        if(index < 0) index = total - 1;
+        if(index >= total) index = 0;
+        current = index;
+        track.style.transform = 'translateX(' + (-100 * current) + '%)';
+        dots.forEach(function(d,i){
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function next(){
+        goTo(current + 1);
+      }
+
+      function resetAuto(){
+        if(autoTimer) clearInterval(autoTimer);
+        autoTimer = setInterval(next, 7000);
+      }
+
+      resetAuto();
+    })();
+  </script>
+
+</body>
+</html>
