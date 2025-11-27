@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>URP एडमिन पैनल</title>
+
+<style>
+  :root{
+    --primary:#0a3d62;
+    --accent:#f39c12;
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --muted:#6b7280;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:#111827;
+  }
+
+  .header{
+    background:linear-gradient(90deg,var(--primary),#3b6df3);
+    color:#fff;
+    padding:12px 0;
+    box-shadow:0 4px 14px rgba(15,35,75,0.35);
+  }
+  .container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 18px;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo img{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:#fff;
+    padding:2px;
+    object-fit:cover;
+  }
+  .logo-title{
+    font-weight:700;
+    font-size:15px;
+  }
+
+  main{
+    padding:26px 0;
+  }
+
+  h3{
+    margin-bottom:6px;
+    color:#0b2b4a;
+  }
+  .small{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  .cta{
+    margin-top:12px;
+    background:var(--accent);
+    border:none;
+    color:#111827;
+    padding:8px 14px;
+    border-radius:6px;
+    font-weight:600;
+    cursor:pointer;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 6px 14px rgba(0,0,0,0.05);
+  }
+  th, td{
+    border:1px solid #e5e7eb;
+    padding:8px 10px;
+    font-size:13px;
+    text-align:left;
+  }
+  th{
+    background:#f1f5f9;
+    font-weight:600;
+  }
+
+  .footer{
+    background:#0b2b4a;
+    color:#fff;
+    padding:16px 0;
+    margin-top:20px;
+    font-size:12px;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <img src="logo%20urp.png" alt="URP logo">
+      <div class="logo-title">Uttarakhand Reform Party — Admin</div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h3>सदस्यता रिकॉर्ड (केवल इस डिवाइस पर)</h3>
+  <p class="small">
+    यह पेज केवल इस डिवाइस पर सेव किए गए स्थानीय सदस्यता डेटा को दिखाता है।  
+    मुख्य सदस्यता डेटा Google Forms और Google Sheets के ज़रिए सुरक्षित रूप से प्रबंधित किया जाता है।
+  </p>
+
+  <button id="export" class="cta">CSV फ़ाइल एक्सपोर्ट करें</button>
+
+  <table id="tab"></table>
+</main>
+
+<footer class="footer">
+  <div class="container">© 2025 Uttarakhand Reform Party</div>
+</footer>
+
+<script>
+function render(){
+  var arr = JSON.parse(localStorage.getItem('urp_members') || '[]');
+  var t = document.getElementById('tab');
+  t.innerHTML = '';
+
+  if(!arr.length){
+    t.innerHTML = '<tr><td class="small">इस डिवाइस पर कोई स्थानीय सदस्यता डेटा नहीं मिला।</td></tr>';
+    return;
+  }
+
+  var header = '<tr><th>#</th><th>नाम</th><th>मोबाइल</th><th>EPIC</th><th>ज़िला</th></tr>';
+  var rows = arr.map(function(r,i){
+    return '<tr><td>'+(i+1)+'</td><td>'+r.name+'</td><td>'+r.mobile+'</td><td>'+r.epic+'</td><td>'+r.district+'</td></tr>';
+  }).join('');
+
+  t.innerHTML = header + rows;
+}
+
+function exportCSV(){
+  var arr = JSON.parse(localStorage.getItem('urp_members') || '[]');
+  if(!arr.length){
+    alert('एक्सपोर्ट करने के लिए कोई डेटा उपलब्ध नहीं है।');
+    return;
+  }
+
+  var csv = [['Name','Mobile','EPIC','District']]
+    .concat(arr.map(function(o){ return [o.name,o.mobile,o.epic,o.district]; }))
+    .map(function(r){ return r.join(','); })
+    .join('\\n');
+
+  var a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'urp_members_local.csv';
+  a.click();
+}
+
+document.getElementById('export').onclick = exportCSV;
+render();
+</script>
+
+</body>
+</html>
