@@ -11,5 +11,68 @@
     आपके ब्राउज़र में सीधे सदस्यता फ़ॉर्म वाला Join पेज खुलेगा।
   </p>
   <img src="https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl=https://urp05.github.io/urp-site/join.html" alt="Join URP QR Code">
+<script>
+(function(){
+  // 1) Kaun-sa file open hai?
+  var path = location.pathname.split('/').pop() || 'index.html';
+
+  // 2) Base name nikalna: index / vision / join ...
+  function getBaseName(filename){
+    if(!filename) return 'index';
+    // index-hi.html → index
+    if(filename.indexOf('-hi') !== -1){
+      return filename.replace('-hi','').replace('.html','');
+    }
+    return filename.replace('.html','');
+  }
+
+  var base = getBaseName(path);
+
+  // Jo public pages language controlled honge:
+  var pages = ['index','about','vision','join','candidates','contact'];
+
+  // 3) Saved language (default EN)
+  var savedLang = localStorage.getItem('urp_lang') || 'en';
+
+  // Current page ka language filename se
+  var currentLang = path.indexOf('-hi') !== -1 ? 'hi' : 'en';
+
+  // 4) Agar saved language aur current file ka lang mismatch hai → redirect
+  if (pages.indexOf(base) !== -1 && savedLang !== currentLang){
+    var target = base + (savedLang === 'hi' ? '-hi.html' : '.html');
+    if (target !== path){
+      location.href = target;
+      return; // redirect ke baad niche ka code run nahi kare
+    }
+  }
+
+  // 5) Nav links ko bhi same language follow karwana
+  try{
+    pages.forEach(function(p){
+      // English ya Hindi ka jo bhi anchor mil jaaye
+      var link = document.querySelector('a[href="'+p+'.html"]') ||
+                 document.querySelector('a[href="'+p+'-hi.html"]');
+      if(link){
+        link.href = p + (savedLang === 'hi' ? '-hi.html' : '.html');
+      }
+    });
+  }catch(e){
+    // fail hone par silently ignore
+  }
+
+  // 6) Language toggle par click → preference save karo
+  var langLinks = document.querySelectorAll('.lang-switch .lang');
+  langLinks.forEach(function(link){
+    link.addEventListener('click', function(){
+      var txt = this.textContent.trim();
+      var lang = (txt.indexOf('EN') === 0) ? 'en' : 'hi';
+      localStorage.setItem('urp_lang', lang);
+      // href already sahi hai, isliye browser ko normal navigate karne do
+    });
+  });
+
+})();
+</script>
+
 </body>
 </html>
